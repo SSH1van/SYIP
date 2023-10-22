@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style_fonts.css">
 
-    <title>SYIP</title>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
+    <meta mame="description" content="Интеллектуальная собственность">
+    <meta mame="keywords" content="Интеллектуальная собственность">
+    <meta name="googlebot" content="notranslate">
+
+    <title>SYIP</title>
 </head>
 
 <body>
-
+    <!-- SVG -->
     <svg style="display: none">
         <symbol id="login" viewBox="200 -200 1024 1024">
             <g transform="translate(0,1024) scale(0.14,-0.14)">
@@ -25,13 +37,22 @@
         </symbol>
     </svg>
 
-    <div class="header">
+
+    <!-- Bubbles -->
+    <div class="bubbles">
+        <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
+    </div>
+
+
+    <!-- Header -->
+    <div class="header_hover" id="headerHover">HoverMe</div>
+    <div class="header" id="header">
         <div class="container">
             <div class="header_inner">
                 <div class="navs">
-                    <div class="nav">Главная</div>
-                    <div class="nav">Для кого</div>
-                    <div class="nav">Каким образом</div>
+                    <a class="nav" id="nav1" data-scroll="#intro">Главная</a>
+                    <a class="nav" id="nav2" data-scroll="#whom">Для кого</a>
+                    <a class="nav" id="nav3" data-scroll="#timeline">Каким образом</a>
                 </div>
                 <div class="login">
                     <button class="login_inner">
@@ -40,10 +61,112 @@
                         </svg>
                     </button>
                 </div>
+            </div><!-- /.header_inner -->
+        </div><!-- /.container -->
+    </div><!-- /.header -->
+
+
+    <!-- Intro -->
+    <div class="intro" id="intro">
+        <div class="intro_inner">
+            <div class="intro_title">Защита интеллектуальной собственности</div>
+        </div>
+        <div class="intro_block">
+            <div class="intro_block_inner">
+                <img src="/img/intro/qr.png" alt="" class="intro_img">
             </div>
         </div>
     </div>
 
+
+    <!-- For whom -->
+    <div class="whom" id="whom">
+        <div class="title">Кому это пригодится?</div>
+        <div id="whom" class="whom_inner">
+            <card data-image="img/whom/1.jpeg">
+                <div slot="header" class="whom_subtitle">Студентам</div>
+                <div slot="content" class="whom_text">Текст, который в настоящее время не имеет смысловой нагрузки.
+                    Йови,
+                    надеюсь он тут будет</div>
+            </card>
+            <card data-image="img/whom/2.jpeg">
+                <div slot="header" class="whom_subtitle">Преподавателям</div>
+                <div slot="content" class="whom_text">Текст, который в настоящее время не имеет смысловой нагрузки.
+                    Йови,
+                    надеюсь он тут будет</div>
+            </card>
+            <card data-image="img/whom/3.jpeg">
+                <div slot="header" class="whom_subtitle">Ученикам</div>
+                <div slot="content" class="whom_text">Текст, который в настоящее время не имеет смысловой нагрузки.
+                    Йови,
+                    надеюсь он тут будет</div>
+            </card>
+        </div><!-- /.whom_inner -->
+    </div><!-- /.whom -->
+
+
+    <!---- Timeline ---->
+    <div class="title" id="timeline">Порядок организации защиты ИС</div>
+    <section id="cd-timeline" class="timeline">
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-first"></div>
+            <div class="cd-timeline-content">
+                <h1>Написание статьи</h1>
+                <p>Текст, который в настоящее время не имеет смысловой нагрузки. Йови,
+                    надеюсь он тут будет</p>
+            </div> <!-- /.cd-timeline-content -->
+        </div> <!-- /.cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-second"></div>
+            <div class="cd-timeline-content">
+                <h1>Регистрация аккаунта</h1>
+                <p>Текст, который в настоящее время не имеет смысловой нагрузки. Йови,
+                    надеюсь он тут будет. Ещё немного бла бла бла бла бла бла бла бла
+                    бла бла бла бла бла бла бла</p>
+            </div> <!-- /.cd-timeline-content -->
+        </div> <!-- /.cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-third"></div>
+            <div class="cd-timeline-content">
+                <h1>Добавление работы</h1>
+                <p>Текст, который в настоящее время не имеет смысловой нагрузки. Йови,
+                    надеюсь он тут будет. Ещё немного бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+                    бла бла
+                    бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла</p>
+            </div> <!-- /.cd-timeline-content -->
+        </div> <!-- /.cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-fourth"></div> <!-- cd-timeline-img -->
+            <div class="cd-timeline-content">
+                <h1>Получение персонального QR кода</h1>
+                <p>Текст, который в настоящее время не имеет смысловой нагрузки. Йови,
+                    надеюсь он тут будет. Ещё немного бла бла бла бла бла бла бла бла
+                    бла бла бла бла бла бла бла</p>
+            </div> <!-- /.cd-timeline-content -->
+        </div> <!-- /.cd-timeline-block -->
+    </section> <!-- /.timeline -->
+
+
+    <!---- Footer ---->
+    <div class="footer">
+        <div class="copyright">
+            <div class="copyright_text">
+                <div>Copyright © 2023 SYIP. Все права защищены.</div>
+                <div>Made <span>by Ivan</span></div>
+            </div>
+        </div> <!-- /.copyright -->
+    </div> <!-- /.footer -->
+
+
+    <!-- Javascript -->
+    <script src="js/vue.min.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>
