@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -33,6 +37,9 @@
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
 
+    
+   
+
 
     <div class="container">
         <div class="box"></div>
@@ -41,24 +48,16 @@
                 <div class="info-item">
                     <div class="table">
                         <div class="table-cell">
-                            <p>
-                                Уже есть аккаунт?
-                            </p>
-                            <div class="btn">
-                                Войти
-                            </div>
+                            <p>Уже есть аккаунт?</p>
+                            <div class="btn another">Войти</div>
                         </div>
                     </div>
                 </div>
                 <div class="info-item">
                     <div class="table">
                         <div class="table-cell">
-                            <p>
-                                Нет аккаунта?
-                            </p>
-                            <div class="btn">
-                                Создать
-                            </div>
+                            <p>Нет аккаунта?</p>
+                            <div class="btn another">Создать</div>
                         </div>
                     </div>
                 </div>
@@ -67,15 +66,25 @@
                 <div class="form-item log-in">
                     <div class="table">
                         <div class="table-cell">
-                            <a href="index.html"><svg viewBox="0 0 200 200">
-                                    <path
-                                        d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165ZM116.5,57.5a9.67,9.67,0,0,0-14,0L74,86a19.92,19.92,0,0,0,0,28.5L102.5,143a9.9,9.9,0,0,0,14-14l-28-29L117,71.5C120.5,68,120.5,61.5,116.5,57.5Z" />
+                            <a href="index.php" class="ssg_a"><svg viewBox="0 0 200 200">
+                                    <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165ZM116.5,57.5a9.67,9.67,0,0,0-14,0L74,86a19.92,19.92,0,0,0,0,28.5L102.5,143a9.9,9.9,0,0,0,14-14l-28-29L117,71.5C120.5,68,120.5,61.5,116.5,57.5Z" />
                                 </svg>
                             </a>
-                            <input name="Username" placeholder="Логин" type="text" /><input name="Password"
-                                placeholder="Пароль" type="Password" />
-                            <div class="btn in">
-                                Войти
+                            <div class="table-cell-inner">
+                                <?php
+                                    if ($_SESSION['message']) {
+                                        echo '<p class="error_message"> ' . $_SESSION['message'] . ' </p>';
+                                    }
+                                    unset($_SESSION['message']);
+                                ?>
+                                <form action="vendor/login.php" method="post">
+                                    <input placeholder="Логин" name="login" type="text" />
+                                    <input placeholder="Пароль" name="pass" type="password" />
+                                    <button type="submit" class="btn in">Войти</button>
+                                </form>
+
+                                
+
                             </div>
                         </div>
                     </div>
@@ -83,23 +92,31 @@
                 <div class="form-item sign-up">
                     <div class="table">
                         <div class="table-cell">
-                            <a href="index.html"><svg viewBox="0 0 200 200">
-                                    <path
-                                        d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165ZM116.5,57.5a9.67,9.67,0,0,0-14,0L74,86a19.92,19.92,0,0,0,0,28.5L102.5,143a9.9,9.9,0,0,0,14-14l-28-29L117,71.5C120.5,68,120.5,61.5,116.5,57.5Z" />
+                            <a href="index.php"><svg viewBox="0 0 200 200">
+                                    <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165ZM116.5,57.5a9.67,9.67,0,0,0-14,0L74,86a19.92,19.92,0,0,0,0,28.5L102.5,143a9.9,9.9,0,0,0,14-14l-28-29L117,71.5C120.5,68,120.5,61.5,116.5,57.5Z" />
                                 </svg>
                             </a>
-                            <input name="email" placeholder="Email" type="text" /><input name="fullName"
-                                placeholder="Имя" type="text" /><input name="Username" placeholder="Логин"
-                                type="text" /><input name="Password" placeholder="Пароль" type="Password" />
-                            <div class="btn in">
-                                Создать
-                            </div>
+                            <form action="vendor/singup.php" method="post">
+                                <input placeholder="Email" name="email" type="email" />
+                                <input placeholder="Имя" name="sname" type="text" />
+                                <input placeholder="Логин" name="login" type="text" />
+                                <input placeholder="Пароль" name="pass" type="password" />
+                                <button class="btn in">Создать</и>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
+
+    <?php
+        $_SESSION['message'] = ""
+    ?>
+
+   
 
     <script src="js/jquery.min.js"></script>
     <script src="js/regaut/app.js"></script>

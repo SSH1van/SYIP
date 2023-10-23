@@ -119,11 +119,6 @@ body {
     margin: 20px;
 }
 
-.container .container-forms .container-info .info-item .btn {
-    background-color: transparent;
-    border: 1px solid #fff;
-}
-
 .container .container-forms .container-info .info-item .table-cell {
     padding-right: 35px;
 }
@@ -236,6 +231,8 @@ body {
     opacity: 1;
 }
 
+
+
 .container.active input,
 .container.active .btn,
 .container.active .info-item {
@@ -274,15 +271,18 @@ svg:hover {
     height: 55px;
 }
 
+
+
 /* RGB Button
 ======================*/
-.container .btn {
+.btn {
     cursor: pointer;
     text-align: center;
     margin: 0 auto;
     width: 110px;
     color: #fff;
-    background-color: hsla(229, 56%, 18%, 1);
+    background-color: transparent;
+    border: #fff 2px solid;
     opacity: 1;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -321,7 +321,6 @@ svg:hover {
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
 }
 
 .btn.in:hover:before {
@@ -337,7 +336,6 @@ svg:hover {
     background: hsla(229, 56%, 18%, 1);
     left: 0;
     top: 0;
-    border-radius: 10px;
 }
 
 @keyframes glowing {
@@ -353,3 +351,41 @@ svg:hover {
         background-position: 0 0;
     }
 }
+
+.btn.another:hover {
+    background: #fff;
+    color: hsla(229, 56%, 18%, 1);
+    border: hsla(229, 56%, 18%, 1) 2px solid;
+}
+
+.error_message {
+    color: #ff0000;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+
+
+}
+
+.table-cell-inner {
+    display: flex;
+    width: inherit;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.table-cell-inner form {
+    display: flex;
+    flex-direction: column;
+    
+}
+

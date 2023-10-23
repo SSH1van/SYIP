@@ -55,7 +55,7 @@
                     <div class="nav" id="nav3" data-scroll="#timeline">Каким образом</div>
                 </div>
                 <div class="login">
-                    <a class="login_inner" href="/regaut.html">
+                    <a class="login_inner" href="/regaut.php">
                         <svg class="login_icon">
                             <use xlink:href="#login"></use>
                         </svg>
