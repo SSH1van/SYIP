@@ -8,7 +8,7 @@ $login = $_POST['login'];
 $pass =  $_POST['pass'];
 
 if (empty($login) || empty($pass) || empty($email) || empty($sname)) {
-    $_SESSION['message'] = 'Заполните все поля';
+    $_SESSION['messageSingup'] = 'Заполните все поля';
     header('Location: ../regaut.php');
 } else {
     $sql = "INSERT INTO `SYIPusers` (login,pass,email,name) VALUES ('$login', '$pass', '$email', '$sname')";

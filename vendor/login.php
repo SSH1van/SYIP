@@ -6,7 +6,7 @@ $login = $_POST['login'];
 $pass = $_POST['pass'];
 
 if (empty($login) || empty($pass)) {
-    $_SESSION['message'] = 'Заполните все поля';
+    $_SESSION['messageLogin'] = 'Заполните все поля';
     header('Location: ../regaut.php');
 } else {
     $sql = "SELECT * FROM `SYIPusers` WHERE login = '$login' AND pass = '$pass'";
@@ -14,10 +14,12 @@ if (empty($login) || empty($pass)) {
 
     if ($result->num_rows > 0 ) {
         while ($row = $result->fetch_assoc()) {
-            echo "Добро пожаловать, " . $row['login'];
+            // echo "Добро пожаловать, " . $row['login'];
+            header('Location: /index.php');
         }
     } else {
-        echo "Данный пользователь отсутствует";
+        $_SESSION['messageLogin'] = 'Данный пользователь отсутствует';
+        header('Location: ../regaut.php');
     }
 }
 ?>

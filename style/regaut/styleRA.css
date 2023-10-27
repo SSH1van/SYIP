@@ -271,6 +271,10 @@ svg:hover {
     height: 55px;
 }
 
+.ssg_a {
+    position: absolute;
+    top: 0;
+}
 
 
 /* RGB Button
@@ -366,13 +370,13 @@ svg:hover {
     justify-content: center;
   
     position: absolute;
-    top: -40px;
+    top: -30px;
     width: 100%;
     text-align: center;
     margin: 0;
-
-
 }
+
+
 
 .table-cell-inner {
     display: flex;
