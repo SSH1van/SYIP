@@ -209,49 +209,6 @@ body {
     opacity: 0;
 }
 
-.container.active {
-    width: 260px;
-    height: 140px;
-    margin-top: -70px;
-}
-
-.container.active .container-form {
-    left: 30px;
-    width: 200px;
-    height: 200px;
-}
-
-.container.active .container-form:before {
-    content: "✔";
-    position: absolute;
-    left: 51px;
-    top: 5px;
-    color: hsla(229, 56%, 18%, 1);
-    font-size: 130px;
-    opacity: 1;
-}
-
-
-
-.container.active input,
-.container.active .btn,
-.container.active .info-item {
-    display: none;
-    opacity: 0;
-    padding: 0px;
-    margin: 0 auto;
-    height: 0;
-}
-
-.container.active .form-item {
-    height: 100%;
-}
-
-.container.active .container-forms .container-info .info-item {
-    height: 0%;
-    opacity: 0;
-}
-
 svg {
     position: absolute;
     top: 0;
@@ -363,17 +320,21 @@ svg:hover {
 }
 
 .error_message {
-    color: #ff0000;
+    color: hsla(23, 62%, 42%, 1);
     font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     position: absolute;
     top: -30px;
     width: 100%;
     text-align: center;
     margin: 0;
+}
+
+.error_message.green {
+    color: hsla(229, 56%, 18%, 1);
 }
 
 
@@ -390,6 +351,5 @@ svg:hover {
 .table-cell-inner form {
     display: flex;
     flex-direction: column;
-    
-}
 
+}

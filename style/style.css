@@ -86,11 +86,11 @@ a {
 /* Header
 ======================*/
 .header_hover {
-	position: fixed;
-	z-index: 1;
-	height: 70px;
-	width: 100%;
-	font-size: 0;
+    position: fixed;
+    z-index: 1;
+    height: 70px;
+    width: 100%;
+    font-size: 0;
     top: 0;
 }
 
@@ -113,7 +113,7 @@ a {
 }
 
 .header.fixed {
-	transform: translateY(-70px);
+    transform: translateY(-70px);
 }
 
 .header_inner {
@@ -152,7 +152,7 @@ a {
 }
 
 .nav.active {
-	letter-spacing: 4px;
+    letter-spacing: 4px;
     font-family: 'Montserrat Medium', serif;
 }
 
@@ -292,11 +292,19 @@ a {
     justify-content: center;
 }
 
+.second .whom_text {
+    margin-top: 100px;
+}
+
 .card-wrap {
     margin: 0 40px;
     transform: perspective(800px);
     transform-style: preserve-3d;
     cursor: pointer;
+}
+
+.card-wrap.second:hover .whom_text {
+    margin-top: 10px;
 }
 
 .card-wrap:hover .card-info {

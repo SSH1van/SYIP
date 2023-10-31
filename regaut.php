@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -37,10 +37,7 @@ session_start();
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
 
-
-
-
-
+    <!-- Singup and login -->    
     <div class="container">
         <div class="box"></div>
         <div class="container-forms">
@@ -96,8 +93,15 @@ session_start();
                             <div class="table-cell-inner">
                                 <?php
                                 if ($_SESSION['messageSingup']) {
-                                    echo '<p class="error_message"> ' . $_SESSION['messageSingup'] . ' </p>';
-                                    echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
+                                    if ($_SESSION['messageSingup'] === "Заполните все поля") {
+                                        echo '<p class="error_message"> ' . $_SESSION['messageSingup'] . ' </p>';
+                                        echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
+                                    }
+                                    if ($_SESSION['messageSingup'] === "Регистрация выполнена") {
+                                        echo '<p class="error_message"> ' . $_SESSION['messageSingup'] . ' </p>';
+                                        echo '<script> document.querySelector(".container").classList.toggle("log-in"); </script>';
+                                        echo '<script> document.querySelector(".error_message").classList.add("green"); </script>';
+                                    }
                                 }
                                 unset($_SESSION['messageSingup']);
                                 ?>
@@ -123,7 +127,7 @@ session_start();
 
     <script src="js/jquery.min.js"></script>
     <script src="js/regaut/regaut.js"></script>
-   
+
 </body>
 
 </html>

@@ -9,6 +9,7 @@ if (empty($login) || empty($pass)) {
     $_SESSION['messageLogin'] = 'Заполните все поля';
     header('Location: ../regaut.php');
 } else {
+    $pass = hash('sha3-224', $pass);
     $sql = "SELECT * FROM `SYIPusers` WHERE login = '$login' AND pass = '$pass'";
     $result = $connect->query($sql);
 
@@ -22,4 +23,3 @@ if (empty($login) || empty($pass)) {
         header('Location: ../regaut.php');
     }
 }
-?>
