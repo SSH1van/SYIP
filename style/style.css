@@ -227,6 +227,9 @@ a {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
+    padding-left: 15%;
 }
 
 .intro_title {
@@ -234,18 +237,23 @@ a {
     font-size: 70px;
     letter-spacing: 2px;
     position: relative;
-    left: -700px;
+
 
     max-width: 300px;
     padding: 250px 0 0 0;
     text-transform: uppercase;
 }
 
+.intro_text {
+    margin-top: 100px;
+    width: 50%;
+    font-size: 26px;
+}
+
 .intro_block {
     position: relative;
-    top: -50px;
+    top: 0;
     right: 0;
-    margin: 40px 0;
 
     width: 100%;
     height: 450px;
@@ -828,12 +836,37 @@ h1 {
     }
 }
 
+/* Info
+======================*/
+
+.info {
+    margin: 100px 0;
+   
+}
+
+.info_inner {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.info_text {
+    width: 700px;
+    background-color: hsla(229, 56%, 18%, 1);
+    opacity: 0.8;
+    border-radius: 20px;
+    padding: 30px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+
 /* Copyright
 ======================*/
 
 .copyright {
-    background-color: hsla(229, 56%, 18%, 1);
-    padding: 25px 0;
+    background: linear-gradient( rgba(2,0,36,0) 0%, hsla(229, 56%, 18%, 1) 100%);
+    padding: 70px 0;
     line-height: 1.5;
     position: relative;
     z-index: 1;
