@@ -63,6 +63,7 @@ a {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     height: 150px;
+    margin-top: 125px;
 
     display: flex;
     align-items: center;
@@ -228,8 +229,6 @@ a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    padding-left: 15%;
 }
 
 .intro_title {
@@ -841,7 +840,6 @@ h1 {
 
 .info {
     margin: 100px 0;
-   
 }
 
 .info_inner {
@@ -852,11 +850,10 @@ h1 {
 
 .info_text {
     width: 700px;
-    background-color: hsla(229, 56%, 18%, 1);
+    background: hsla(229, 56%, 18%, 0.8);
     opacity: 0.8;
     border-radius: 20px;
     padding: 30px;
-    opacity: 0.8;
     z-index: 1;
 }
 
@@ -865,7 +862,7 @@ h1 {
 ======================*/
 
 .copyright {
-    background: linear-gradient( rgba(2,0,36,0) 0%, hsla(229, 56%, 18%, 1) 100%);
+    background: linear-gradient( rgba(0, 0, 0, 0) 0%, hsla(229, 56%, 18%, 1) 100%);
     padding: 70px 0;
     line-height: 1.5;
     position: relative;

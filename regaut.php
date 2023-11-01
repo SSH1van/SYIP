@@ -1,5 +1,10 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 session_start();
+
+if ($_SESSION['user']) {
+    header('Location: profile.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +16,7 @@ session_start();
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style_fonts.css">
-    <link rel="stylesheet" href="style/regaut/styleRA.css">
+    <link rel="stylesheet" href="style/styleRA.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -22,22 +27,16 @@ session_start();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta mame="description" content="Интеллектуальная собственность">
-    <meta mame="keywords" content="Интеллектуальная собственность">
-    <meta name="googlebot" content="notranslate">
-
     <title>SYIP</title>
 </head>
 
 <body>
-    <!-- SVG -->
-
     <!-- Bubbles -->
     <div class="bubbles reverce">
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
 
-    <!-- Singup and login -->    
+    <!-- Signup and login -->    
     <div class="container">
         <div class="box"></div>
         <div class="container-forms">
@@ -75,7 +74,7 @@ session_start();
                                 unset($_SESSION['messageLogin']);
                                 ?>
                                 <form action="vendor/login.php" method="post">
-                                    <input placeholder="Логин" name="login" type="text" />
+                                    <input placeholder="Email" name="email" type="email" />
                                     <input placeholder="Пароль" name="pass" type="password" />
                                     <button type="submit" class="btn in">Войти</button>
                                 </form>
@@ -92,24 +91,22 @@ session_start();
                             </a>
                             <div class="table-cell-inner">
                                 <?php
-                                if ($_SESSION['messageSingup']) {
-                                    if ($_SESSION['messageSingup'] === "Заполните все поля") {
-                                        echo '<p class="error_message"> ' . $_SESSION['messageSingup'] . ' </p>';
-                                        echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
-                                    }
-                                    if ($_SESSION['messageSingup'] === "Регистрация выполнена") {
-                                        echo '<p class="error_message"> ' . $_SESSION['messageSingup'] . ' </p>';
+                                if ($_SESSION['messageSignup']) {
+                                    if ($_SESSION['messageSignup'] === "Регистрация выполнена") {
+                                        echo '<p class="error_message"> ' . $_SESSION['messageSignup'] . ' </p>';
                                         echo '<script> document.querySelector(".container").classList.toggle("log-in"); </script>';
                                         echo '<script> document.querySelector(".error_message").classList.add("green"); </script>';
-                                    }
+                                    } else {
+                                        echo '<p class="error_message"> ' . $_SESSION['messageSignup'] . ' </p>';
+                                        echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
+                                    } 
                                 }
-                                unset($_SESSION['messageSingup']);
+                                unset($_SESSION['messageSignup']);
                                 ?>
-                                <form action="vendor/singup.php" method="post">
+                                <form action="vendor/signup.php" method="post">
                                     <input placeholder="Email" name="email" type="email" />
-                                    <input placeholder="Имя" name="sname" type="text" />
-                                    <input placeholder="Логин" name="login" type="text" />
                                     <input placeholder="Пароль" name="pass" type="password" />
+                                    <input placeholder="Имя" name="name" type="text" />
                                     <button type="submit" class="btn in sign">Создать</и>
                                 </form>
                             </div>
@@ -121,7 +118,7 @@ session_start();
     </div>
 
     <?php
-    $_SESSION['messageSingup'] = "";
+    $_SESSION['messageSignup'] = "";
     $_SESSION['messageLogin'] = "";
     ?>
 
