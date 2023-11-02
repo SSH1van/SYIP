@@ -8,6 +8,7 @@ $pass = $_POST['pass'];
 if (empty($email) || empty($pass)) {
     $_SESSION['messageLogin'] = 'Заполните все поля';
     header('Location: ../regaut.php');
+    die();
 } else {
     $pass = hash('sha3-224', $pass);
     $sql = "SELECT * FROM `SYIPusers` WHERE email = '$email' AND pass = '$pass'";
@@ -21,9 +22,11 @@ if (empty($email) || empty($pass)) {
                 "email" => $row['email'],
             ];
             header('Location: ../profile.php');
+            die();
         }
     } else {
         $_SESSION['messageLogin'] = 'Неверный email или пароль';
         header('Location: ../regaut.php');
+        die();
     }
 }

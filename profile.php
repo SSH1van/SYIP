@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!$_SESSION['user']) {
+if (empty($_SESSION['user'])) {
     header('Location: regaut.php');
 }
 ?>
@@ -36,7 +36,7 @@ if (!$_SESSION['user']) {
     </div>
 
     <h1><?= $_SESSION['user']['name']?></h1>
-    <a href="vendor/logout.php" class="logout">Выход</a>
+    <a href="src/vendor/logout.php" class="logout">Выход</a>
 
     <script src="js/jquery.min.js"></script>
 

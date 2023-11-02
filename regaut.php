@@ -1,8 +1,7 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
 session_start();
 
-if ($_SESSION['user']) {
+if (!empty($_SESSION['user'])) {
     header('Location: profile.php');
 }
 ?>
@@ -73,9 +72,9 @@ if ($_SESSION['user']) {
                                 }
                                 unset($_SESSION['messageLogin']);
                                 ?>
-                                <form action="vendor/login.php" method="post">
-                                    <input placeholder="Email" name="email" type="email" />
-                                    <input placeholder="Пароль" name="pass" type="password" />
+                                <form action="src/vendor/login.php" method="post">
+                                    <input placeholder="Email" name="email" type="email" aria-invalid="true" />
+                                    <input placeholder="Пароль" name="pass" type="password" aria-invalid="true" />
                                     <button type="submit" class="btn in">Войти</button>
                                 </form>
                             </div>
@@ -103,10 +102,10 @@ if ($_SESSION['user']) {
                                 }
                                 unset($_SESSION['messageSignup']);
                                 ?>
-                                <form action="vendor/signup.php" method="post">
-                                    <input placeholder="Email" name="email" type="email" />
-                                    <input placeholder="Пароль" name="pass" type="password" />
-                                    <input placeholder="Имя" name="name" type="text" />
+                                <form action="src/vendor/signup.php" method="post" enctype="multipart/form-data">
+                                    <input placeholder="Email" name="email" type="email" aria-invalid="true" />
+                                    <input placeholder="Пароль" name="pass" type="password" aria-invalid="true" />
+                                    <input placeholder="Имя" name="name" type="text" aria-invalid="true" />
                                     <button type="submit" class="btn in sign">Создать</и>
                                 </form>
                             </div>
