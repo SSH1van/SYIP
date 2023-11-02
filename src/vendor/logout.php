@@ -1,5 +1,5 @@
 <?php
 session_start();
 unset($_SESSION['user']);
-header('Location: ../regaut.php');
+header('Location: /regaut.php');
 die();

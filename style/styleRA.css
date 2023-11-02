@@ -85,7 +85,7 @@ body {
 }
 
 .container input {
-    margin: 0 auto 15px;
+    margin: 0 auto 2px;
     display: block;
     width: 220px;
     -moz-transition: all 0.3s;
@@ -159,7 +159,7 @@ body {
 
 .container .container-form .btn {
     position: relative;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .container .form-item {
@@ -352,4 +352,12 @@ svg:hover {
     display: flex;
     flex-direction: column;
 
+}
+
+label {
+    display: flex;
+    text-align: center;
+    color:hsla(23, 62%, 42%, 1);
+    flex-direction: column;
+    margin-bottom: 10px;
 }

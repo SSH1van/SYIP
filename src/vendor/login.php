@@ -1,32 +1,28 @@
 <?php
-session_start();
-require_once('connect.php');
+require_once __DIR__ . '/../helpers.php';
 
-$email = $_POST['email'];
-$pass = $_POST['pass'];
+$email = $_POST['email'] ?? null;
+$pass = $_POST['pass'] ?? null;
 
-if (empty($email) || empty($pass)) {
-    $_SESSION['messageLogin'] = 'Заполните все поля';
-    header('Location: ../regaut.php');
-    die();
-} else {
-    $pass = hash('sha3-224', $pass);
-    $sql = "SELECT * FROM `SYIPusers` WHERE email = '$email' AND pass = '$pass'";
-    $result = $connect->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $_SESSION['user'] = [
-                "id" => $row['id'],
-                "name" => $row['name'],
-                "email" => $row['email'],
-            ];
-            header('Location: ../profile.php');
-            die();
-        }
-    } else {
-        $_SESSION['messageLogin'] = 'Неверный email или пароль';
-        header('Location: ../regaut.php');
-        die();
-    }
+if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    setOldValue('email', $email);
+    setValidationError('email', 'Неверный формат электронной почты');
+    setMessage('error', 'Ошибка валидации');
+    redirect('/');
 }
+
+$user = findUser($email);
+
+if (!$user) {
+    setMessage('error', "Пользователь $email не найден");
+    redirect('/');
+}
+
+if (hash("sha3-224", $pass) !== $user['pass']) {
+    setMessage('error', 'Неверный пароль');
+    redirect('/');
+}
+
+$_SESSION['user']['id'] = $user['id'];
+
+redirect('/profile.php');

@@ -1,9 +1,6 @@
 <?php
-session_start();
-
-if (!empty($_SESSION['user'])) {
-    header('Location: profile.php');
-}
+require_once __DIR__ . '/src/helpers.php';
+checkGuest();
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +32,7 @@ if (!empty($_SESSION['user'])) {
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
 
-    <!-- Signup and login -->    
+    <!-- Signup and login -->
     <div class="container">
         <div class="box"></div>
         <div class="container-forms">
@@ -92,20 +89,34 @@ if (!empty($_SESSION['user'])) {
                                 <?php
                                 if ($_SESSION['messageSignup']) {
                                     if ($_SESSION['messageSignup'] === "Регистрация выполнена") {
-                                        echo '<p class="error_message"> ' . $_SESSION['messageSignup'] . ' </p>';
                                         echo '<script> document.querySelector(".container").classList.toggle("log-in"); </script>';
                                         echo '<script> document.querySelector(".error_message").classList.add("green"); </script>';
                                     } else {
                                         echo '<p class="error_message"> ' . $_SESSION['messageSignup'] . ' </p>';
                                         echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
-                                    } 
+                                    }
                                 }
                                 unset($_SESSION['messageSignup']);
                                 ?>
                                 <form action="src/vendor/signup.php" method="post" enctype="multipart/form-data">
-                                    <input placeholder="Email" name="email" type="email" aria-invalid="true" />
-                                    <input placeholder="Пароль" name="pass" type="password" aria-invalid="true" />
-                                    <input placeholder="Имя" name="name" type="text" aria-invalid="true" />
+                                    <label for="email">
+                                        <input placeholder="Email" name="email" type="email" value="<?php echo old('email') ?>" <?php echo validationErrorAttr('email'); ?> />
+                                        <?php if (hasValidationError('email')) : ?>
+                                            <small><?php echo validationErrorMessage('email'); ?></small>
+                                        <?php endif; ?>
+                                    </label>
+                                    <label for="pass">
+                                        <input placeholder="Пароль" name="pass" type="password" value="<?php echo old('pass') ?>" <?php echo validationErrorAttr('pass'); ?> />
+                                        <?php if (hasValidationError('pass')) : ?>
+                                            <small><?php echo validationErrorMessage('pass'); ?></small>
+                                        <?php endif; ?>
+                                    </label>
+                                    <label for="name">
+                                        <input placeholder="Имя" name="name" type="text" value="<?php echo old('name') ?>" <?php echo validationErrorAttr('name'); ?> />
+                                        <?php if (hasValidationError('name')) : ?>
+                                            <small><?php echo validationErrorMessage('name'); ?></small>
+                                        <?php endif; ?>
+                                    </label>
                                     <button type="submit" class="btn in sign">Создать</и>
                                 </form>
                             </div>
