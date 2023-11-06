@@ -345,7 +345,7 @@ svg:hover {
     justify-content: center;
     flex-direction: column;
     position: relative;
-
+    align-items: center
 }
 
 .table-cell-inner form {
@@ -360,4 +360,15 @@ label {
     color:hsla(23, 62%, 42%, 1);
     flex-direction: column;
     margin-bottom: 10px;
+}
+
+.accept {
+    color: hsla(229, 56%, 18%, 1);
+    margin-bottom: 10px;
+}
+
+.notice.error {
+    color: hsla(23, 62%, 42%, 1);
+    margin-bottom: 10px;
+    font-size: 15px;
 }

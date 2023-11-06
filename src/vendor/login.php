@@ -1,26 +1,26 @@
 <?php
 require_once __DIR__ . '/../helpers.php';
 
+// Getting values from a form
 $email = $_POST['email'] ?? null;
 $pass = $_POST['pass'] ?? null;
 
+
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    setOldValue('email', $email);
-    setValidationError('email', 'Неверный формат электронной почты');
+    
+    setOldValue('lemail', $email);
+    setValidationError('lemail', 'Некорректая почта');
     setMessage('error', 'Ошибка валидации');
-    redirect('/');
+    
+    redirect('/regaut.php');
 }
 
 $user = findUser($email);
 
-if (!$user) {
-    setMessage('error', "Пользователь $email не найден");
-    redirect('/');
-}
-
-if (hash("sha3-224", $pass) !== $user['pass']) {
-    setMessage('error', 'Неверный пароль');
-    redirect('/');
+if (!$user || hash("sha3-224", $pass) !== $user['pass']) {
+    setOldValue('lemail', $email);
+    setMessage('error', "Неверная почта или пароль");
+    redirect('/regaut.php');
 }
 
 $_SESSION['user']['id'] = $user['id'];

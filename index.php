@@ -21,7 +21,7 @@
     <meta mame="keywords" content="Интеллектуальная собственность">
     <meta name="googlebot" content="notranslate">
 
-    <title>SYIP</title>
+    <title>Главная</title>
 </head>
 
 <body>

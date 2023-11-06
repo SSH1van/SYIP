@@ -1,9 +1,8 @@
 <?php
-session_start();
+require_once __DIR__ . '/src/helpers.php';
+checkAuth();
 
-if (empty($_SESSION['user'])) {
-    header('Location: regaut.php');
-}
+$user = currentUser();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@ if (empty($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/styleProfile.css">
+    <link rel="stylesheet" href="style/profile/styleProfile.css">
     <link rel="stylesheet" href="style/style_fonts.css">
 
     <!-- Favicons -->
@@ -26,7 +25,7 @@ if (empty($_SESSION['user'])) {
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <title>SYIP</title>
+    <title>Личный кабинет</title>
 </head>
 
 <body>
@@ -35,11 +34,29 @@ if (empty($_SESSION['user'])) {
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
 
-    <h1><?= $_SESSION['user']['name']?></h1>
-    <a href="src/vendor/logout.php" class="logout">Выход</a>
+    <div class="menu">
+        <div class="btn-burger">
+            <div class="icon"></div>
+        </div>
+        <div class="menu-inner ">
+            <div class="user"><?php echo $user['email'] ?></div>
+            <div class="menu-navs">
+                <div class="menu-nav">Главная</div>
+                <div class="menu-nav">Мои работы</div>
+                <div class="menu-nav"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <h1><?php echo $user['name'] ?></h1>
+    <form action="src/vendor/logout.php" method="post" class="logout">
+        <button role="button">Выйти из аккаунта</button>
+    </form>-->
 
     <script src="js/jquery.min.js"></script>
-
+    <script src="js/profile/profile.js"></script>
 
 </body>
 

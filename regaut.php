@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/src/helpers.php';
 checkGuest();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@ checkGuest();
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style_fonts.css">
-    <link rel="stylesheet" href="style/styleRA.css">
+    <link rel="stylesheet" href="style/regaut/styleRA.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -23,10 +25,11 @@ checkGuest();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <title>SYIP</title>
+    <title>Авторизация и регистрация</title>
 </head>
 
 <body>
+
     <!-- Bubbles -->
     <div class="bubbles reverce">
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
@@ -63,15 +66,17 @@ checkGuest();
                                 </svg>
                             </a>
                             <div class="table-cell-inner">
-                                <?php
-                                if ($_SESSION['messageLogin']) {
-                                    echo '<p class="error_message"> ' . $_SESSION['messageLogin'] . ' </p>';
-                                }
-                                unset($_SESSION['messageLogin']);
-                                ?>
+                                <?php if (hasMessage('error')) : ?>
+                                    <div class="notice error"><?php echo getMessage('error') ?></div>
+                                <?php endif; ?>
                                 <form action="src/vendor/login.php" method="post">
-                                    <input placeholder="Email" name="email" type="email" aria-invalid="true" />
-                                    <input placeholder="Пароль" name="pass" type="password" aria-invalid="true" />
+                                    <label for="email">
+                                        <input placeholder="Email" name="email" type="email" value="<?php echo old('lemail') ?>" <?php echo validationErrorAttr('lemail'); ?> />
+                                        <?php if (hasValidationError('lemail')) : ?>
+                                            <small><?php echo validationErrorMessage('lemail'); ?></small>
+                                        <?php endif; ?>
+                                    </label>
+                                    <input placeholder="Пароль" name="pass" type="password" />
                                     <button type="submit" class="btn in">Войти</button>
                                 </form>
                             </div>
@@ -86,18 +91,10 @@ checkGuest();
                                 </svg>
                             </a>
                             <div class="table-cell-inner">
-                                <?php
-                                if ($_SESSION['messageSignup']) {
-                                    if ($_SESSION['messageSignup'] === "Регистрация выполнена") {
-                                        echo '<script> document.querySelector(".container").classList.toggle("log-in"); </script>';
-                                        echo '<script> document.querySelector(".error_message").classList.add("green"); </script>';
-                                    } else {
-                                        echo '<p class="error_message"> ' . $_SESSION['messageSignup'] . ' </p>';
-                                        echo '<script> document.querySelector(".container").classList.add("log-in"); </script>';
-                                    }
-                                }
-                                unset($_SESSION['messageSignup']);
-                                ?>
+                                <?php if (hasValidationError('accept')) : ?>
+                                    <small class="accept"><?php echo validationErrorMessage('accept'); ?></small>
+                                <?php endif; ?>
+
                                 <form action="src/vendor/signup.php" method="post" enctype="multipart/form-data">
                                     <label for="email">
                                         <input placeholder="Email" name="email" type="email" value="<?php echo old('email') ?>" <?php echo validationErrorAttr('email'); ?> />

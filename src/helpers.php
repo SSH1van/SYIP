@@ -52,37 +52,35 @@ function hasMessage(string $key): bool
     return isset($_SESSION['message'][$key]);
 }
 
-function getMessageSYIPuserspassword_verify(string $key): string
+function getMessage(string $key): string
 {
     $message = $_SESSION['message'][$key] ?? '';
     unset($_SESSION['message'][$key]);
     return $message;
 }
 
-function getMSQ(): mysqli
+function getPDO(): PDO
 {
-    
     try {
-        return mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-    } catch (mysqli_sql_exception $e) {
+        return new \PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';charset=utf8;dbname=' . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    } catch (\PDOException $e) {
         die("Connection error: {$e->getMessage()}");
     }
 }
 
 function findUser(string $email): array|bool
 {
-    $connect = getMSQ();
-    $sql = "SELECT * FROM SYIPusers WHERE email = :email";
+    $pdo = getPDO();
 
-    $stmt = $connect->prepare($sql);
+    $stmt = $pdo->prepare("SELECT * FROM SYIPusers WHERE email = :email");
     $stmt->execute(['email' => $email]);
-    return $connect->query($sql);
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
+
 
 function currentUser(): array|false
 {
-    $connect = getMSQ();
-    $sql = 'SELECT * FROM SYIPusers WHERE id = :id';
+    $pdo = getPDO();
 
     if (!isset($_SESSION['user'])) {
         return false;
@@ -90,27 +88,27 @@ function currentUser(): array|false
 
     $userId = $_SESSION['user']['id'] ?? null;
 
-    $stmt = $connect->prepare($sql);
+    $stmt = $pdo->prepare("SELECT * FROM SYIPusers WHERE id = :id");
     $stmt->execute(['id' => $userId]);
-    return $connect->query($sql);
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
 
 function logout(): void
 {
     unset($_SESSION['user']['id']);
-    redirect('/');
+    redirect('/regaut.php');
 }
 
 function checkAuth(): void
 {
     if (!isset($_SESSION['user']['id'])) {
-        redirect('/');
+        redirect('/regaut.php');
     }
 }
 
 function checkGuest(): void
 {
     if (isset($_SESSION['user']['id'])) {
-        redirect('/home.php');
+        redirect('/profile.php');
     }
 }
