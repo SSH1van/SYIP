@@ -1,6 +1,4 @@
-$('.btn-burger').click (function(){
-    $(this).toggleClass('open');
-    $('.menu').toggleClass('close');
+$('.btn').click(function () {
+  $('.menu').toggleClass('close');
+});
 
-  });
-  
