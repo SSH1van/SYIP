@@ -70,7 +70,7 @@ $user = currentUser();
         <div class="menu-inner">
             <div class="menu-navs">
                 <div class="menu-inner-nav">
-                    <div class="menu-nav common">
+                    <div class="menu-nav common" id="nav-main">
                         <svg class="menu-icon move">
                             <use xlink:href="#home"></use>
                         </svg>
@@ -79,7 +79,7 @@ $user = currentUser();
                             <use xlink:href="#home"></use>
                         </svg>
                     </div>
-                    <div class="menu-nav common">
+                    <div class="menu-nav common" id="nav-projects">
                         <svg class="menu-icon move">
                             <use xlink:href="#note"></use>
                         </svg>
@@ -103,6 +103,29 @@ $user = currentUser();
             </div>
         </div>
     </div>
+
+
+    <!-- Сontent -->
+    <div class="content">
+        <div class="contetn-inner">
+            <div class="shell main" id="main">
+                <div class="elemrnt-main">
+                    Добро пожаловать,
+                    <div class="main-user"><?php echo $user['name'] ?></div>
+                </div>
+            </div>
+
+            <div class="shell projects open" id="projects">
+                <div class="elemrnt-projects open">
+                    <div class="projects-title">Мои работы</div>
+                    <button class="projects-btn">Добавить</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/profile/profile.js"></script>
