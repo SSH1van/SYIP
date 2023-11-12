@@ -29,6 +29,8 @@ $user = currentUser();
 </head>
 
 <body>
+    <div class="block"></div>
+
     <!-- SVG -->
     <svg style="display: none">
         <symbol id="exit" fill="none" viewBox="0 0 24 24">
@@ -65,7 +67,7 @@ $user = currentUser();
             </div>
         </div>
 
-        <div class="menu-inner ">
+        <div class="menu-inner">
             <div class="menu-navs">
                 <div class="menu-inner-nav">
                     <div class="menu-nav common">
@@ -73,12 +75,18 @@ $user = currentUser();
                             <use xlink:href="#home"></use>
                         </svg>
                         <span>Главная</span>
+                        <svg class="menu-icon move small">
+                            <use xlink:href="#home"></use>
+                        </svg>
                     </div>
                     <div class="menu-nav common">
                         <svg class="menu-icon move">
                             <use xlink:href="#note"></use>
                         </svg>
                         <span>Мои работы</span>
+                        <svg class="menu-icon move small">
+                            <use xlink:href="#note"></use>
+                        </svg>
                     </div>
                 </div>
                 <form action="src/vendor/logout.php" method="post" class="user">
@@ -87,6 +95,9 @@ $user = currentUser();
                             <use xlink:href="#exit"></use>
                         </svg>
                         <span><?php echo $user['email'] ?></span>
+                        <svg class="menu-icon small">
+                            <use xlink:href="#exit"></use>
+                        </svg>
                     </button>
                 </form>
             </div>
