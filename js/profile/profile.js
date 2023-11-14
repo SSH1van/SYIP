@@ -1,6 +1,6 @@
 $('.btn').click(function () {
   $('.menu').toggleClass('close');
-  $('.contetn-inner').toggleClass('close');
+  $('.all-contetn-inner').toggleClass('close');
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,36 +19,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+$("#FileInput").on('change', function (e) {
+  var labelVal = $(".filelabel-title").text();
+  var oldfileName = $(this).val();
+  fileName = e.target.value.split('\\').pop();
 
-// $('#main').click(function () {
-//   $('.main').addClass('open');
-//   $('.projects').removeClass('open');
-// });
+  if (oldfileName == fileName) { return false; }
+  var extension = fileName.split('.').pop();
 
-// $('#projects').click(function () {
-//   $('.main').removeClass('open');
-//   $('.projects').addClass('open');
-  
-// });
+  if (extension == 'doc' || extension == 'docx' || extension == 'pdf') {
+    $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+    $(".filelabel i, .filelabel .filelabel-title").css({ 'color': '#2388df' });
+    $(".filelabel").css({ 'border': ' 2px solid #2388df' });
 
+    if (fileName) {
+      if (fileName.length > 10) {
+        $(".filelabel .filelabel-title").text(fileName.slice(0, 4) + '...' + extension);
+      }
+      else {
+        $(".filelabel .filelabel-title").text(fileName);
+      }
+    }
+    else {
+      $(".filelabel .filelabel-title").text(labelVal);
+    }
+  }
+  else {
+    $(".filelabel i").removeClass().addClass('fa fa-file-o');
+    $(".filelabel i, .filelabel .filelabel-title").css({ 'color': 'red' });
+    $(".filelabel").css({ 'border': ' 2px solid red' });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const button = document.getElementById("button");
-//   const rect = document.getElementById("rect");
-
-//   button.addEventListener("click", () => {
-//     toggleTwoClasses(rect, "is-visible", "is-hidden", 500);
-//   });
-// });
-
-// function toggleTwoClasses(element, first, second, timeOfAnimation) {
-//   if (!element.classList.contains(first)) {
-//     element.classList.add(first);
-//     element.classList.remove(second);
-//   } else {
-//     element.classList.add(second);
-//     window.setTimeout(function() {
-//       element.classList.remove(first);
-//     }, timeOfAnimation);
-//   }
-// }
+    $(".filelabel .filelabel-title").text("Ошибка!");
+  }
+});

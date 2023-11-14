@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .block {
     position: absolute;
     z-index: -2;
@@ -250,10 +254,10 @@ span {
 }
 
 
-/* Content
+/* Add Content
 ======================*/
 
-.content {
+.all-content {
     position: relative;
     top: 0;
     right: 0;
@@ -263,7 +267,7 @@ span {
     z-index: 0;
 }
 
-.contetn-inner {
+.all-contetn-inner {
     position: absolute;
     top: 0;
     right: 0;
@@ -274,7 +278,7 @@ span {
     transition-duration: 0.5s;
 }
 
-.contetn-inner.close {
+.all-contetn-inner.close {
     width: 95%;
 }
 
@@ -320,8 +324,7 @@ span {
 
 .elemrnt-projects {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -330,16 +333,131 @@ span {
     font-size: 30px;
 }
 
+.projects-adding {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    height: 150px;
+}
+
+
+.projects-file {
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    width: inherit;
+}
+
+.projects-file small {
+    margin-top: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.filelabel {
+    width: 150px;
+    height: 100%;
+    border: 2px dashed grey;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+}
+.filelabel span {
+    margin: 0;
+}
+.filelabel i {
+    display: block;
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+.filelabel i,
+.filelabel-title {
+  color: grey;
+  transition: 200ms color;
+}
+.filelabel:hover {
+  border: 2px solid #1665c4;
+}
+.filelabel:hover i,
+.filelabel:hover .filelabel-title {
+  color: #1665c4;
+}
+#FileInput{
+    display:none;
+}
+
+
+.adding-right {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.projects-input {
+    height: 42px;
+    border-radius: 5px;
+    font-size: 18px;
+}
 .projects-btn {
     justify-content: center;
-    width: auto;
+    width: 100%;
     height: auto;
     padding: 10px 35px;
-    margin: 30px;
 
-    border-radius: 30px;
+    border-radius: 5px;
     border: #fff solid 2px;
 }
 
 
+/* Content
+======================*/    
 
+.contetn {
+    position: absolute;
+    top: 300px;
+    right: 0;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-block {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: 80%;
+
+    transition-duration: 0.5s;
+    margin: 10px 0;
+}
+
+.content-block:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.content-href {
+    border: none;
+    text-decoration: none;
+}
+
+.contetn-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    color: hsla(229, 56%, 18%, 1);
+}

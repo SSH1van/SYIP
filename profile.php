@@ -3,6 +3,8 @@ require_once __DIR__ . '/src/helpers.php';
 checkAuth();
 
 $user = currentUser();
+
+require_once __DIR__ . '/src/add/preAjax.php';
 ?>
 
 <!DOCTYPE html>
@@ -105,9 +107,10 @@ $user = currentUser();
     </div>
 
 
-    <!-- Сontent -->
-    <div class="content">
-        <div class="contetn-inner">
+    <!-- Add Content -->
+    <div class="all-content">
+        <div class="all-contetn-inner">
+
             <div class="shell main" id="main">
                 <div class="elemrnt-main">
                     Добро пожаловать,
@@ -118,12 +121,60 @@ $user = currentUser();
             <div class="shell projects open" id="projects">
                 <div class="elemrnt-projects open">
                     <div class="projects-title">Мои работы</div>
-                    <button class="projects-btn">Добавить</button>
-                    
+                    <form class="projects-adding" enctype="multipart/form-data" action="src/add/add.php" method="post">
+                        <div class="projects-file">
+                            <label class="filelabel">
+                                <i class="fa fa-paperclip">
+                                </i>
+                                <span class="filelabel-title">
+                                    doc/pdf
+                                </span>
+                                <input class="FileUpload1" id="FileInput" name="file" type="file" />
+                            </label>
+                            <?php if (hasValidationError('file')) : ?>
+                                <small><?php echo validationErrorMessage('file'); ?></small>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="adding-right">
+                            <input name="name" type="text" class="projects-input name" placeholder="Название" value="<?php echo old('name') ?>" <?php echo validationErrorAttr('name'); ?>>
+                            <?php if (hasValidationError('name')) : ?>
+                                <small><?php echo validationErrorMessage('name'); ?></small>
+                            <?php endif; ?>
+
+                            <input name="city" type="text" class="projects-input city" placeholder="Город" value="<?php echo old('city') ?>" <?php echo validationErrorAttr('city'); ?>>
+                            <?php if (hasValidationError('city')) : ?>
+                                <small><?php echo validationErrorMessage('city'); ?></small>
+                            <?php endif; ?>
+
+                            <button class="projects-btn" type="submit">Добавить</button>
+                        </div>
+                    </form>
                 </div>
+
+
+                <!-- Сontent -->
+                <div class="contetn">
+                    <?php foreach ($items as $row) : ?>
+                        <div class="content-block">
+                            <a class="content-href" href="index.php">
+                                <div class="contetn-inner">
+                                    <div class="content-name">
+                                        <?php echo $row['name']; ?>
+                                    </div>
+                                    <div class="content-date">
+                                        <?php echo $row['date']; ?>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
             </div>
         </div>
     </div>
+
 
 
 
