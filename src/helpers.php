@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/config.php';
 
+
 function redirect(string $path)
 {
     header("Location: $path");
@@ -129,9 +130,4 @@ function checkGuest(): void
     if (isset($_SESSION['user']['id'])) {
         redirect('/profile.php');
     }
-}
-
-function checkFile(): void
-{
-   
 }

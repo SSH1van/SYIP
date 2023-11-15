@@ -3,8 +3,7 @@ require_once __DIR__ . '/src/helpers.php';
 checkAuth();
 
 $user = currentUser();
-
-require_once __DIR__ . '/src/add/preAjax.php';
+$_SESSION['num'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -152,23 +151,12 @@ require_once __DIR__ . '/src/add/preAjax.php';
                     </form>
                 </div>
 
-
                 <!-- Сontent -->
                 <div class="contetn">
-                    <?php foreach ($items as $row) : ?>
-                        <div class="content-block">
-                            <a class="content-href" href="index.php">
-                                <div class="contetn-inner">
-                                    <div class="content-name">
-                                        <?php echo $row['name']; ?>
-                                    </div>
-                                    <div class="content-date">
-                                        <?php echo $row['date']; ?>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
+                    <?php require_once __DIR__ . '/src/add/ajax.php'; ?>
+                    <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>">
+                        <img src="" alt="">
+                    </div>
                 </div>
 
             </div>
@@ -176,10 +164,10 @@ require_once __DIR__ . '/src/add/preAjax.php';
     </div>
 
 
-
-
     <script src="js/jquery.min.js"></script>
+    <script src="js/profile/ajax.js"></script>
     <script src="js/profile/profile.js"></script>
+
 
 </body>
 

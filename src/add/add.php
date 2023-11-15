@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../helpers.php';
 $user = currentUser();
 
+// Getting values from a form
 $filePath = null;
 $file = $_FILES['file'] ?? null;
 $name = $_POST['name'] ?? null;
@@ -9,7 +10,7 @@ $city = $_POST['city'] ?? null;
 $iduser = $user['id'] ?? null;
 $date = date('Y-m-d H:i:s');
 
-
+// Validation of data from the form
 if (empty($name)) {
     setValidationError('name', 'Заполните поле');
 }
@@ -18,6 +19,7 @@ if (empty($city)) {
     setValidationError('city', 'Заполните поле');
 }
 
+// Checking the correctness of the file
 if($_FILES["file"]["error"] == 4){
     setValidationError('file', 'Файл нне загружен');
 } else {
@@ -33,6 +35,7 @@ if($_FILES["file"]["error"] == 4){
     }
 }
 
+// Checking the error list
 if (!empty($_SESSION['validation'])) {
     setOldValue('name', $name);
     setOldValue('city', $city);
@@ -40,14 +43,14 @@ if (!empty($_SESSION['validation'])) {
     redirect('/profile.php');
 }
 
+// Checking for file availability
 if (!empty($file)) {
     $filePath = uploadFile($file, 'file');
 }
 
+// Connecting to the database and transmitting parameters
 $pdo = getPDO();
-
 $query = "INSERT INTO SYIPfiles (name, city, file, iduser, date) VALUES (:name, :city, :file, :iduser, :date)";
-
 $params = [
     'name' => $name,
     'city' => $city,
@@ -55,9 +58,7 @@ $params = [
     'iduser' => $iduser,
     'date' => $date
 ];
-
 $stmt = $pdo->prepare($query);
-
 try {
     $stmt->execute($params);
 } catch (\Exception $e) {

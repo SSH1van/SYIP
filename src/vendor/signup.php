@@ -47,6 +47,7 @@ if (!empty($_SESSION['validation'])) {
     redirect('/regaut.php');
 }
 
+// Connecting to the database and transmitting parameters
 $query = "INSERT INTO SYIPusers (name, email, pass) VALUES (:name, :email, :pass)";
 $params = [
     'name' => $name,
