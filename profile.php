@@ -107,7 +107,7 @@ $_SESSION['num'] = 1;
 
 
     <!-- Add Content -->
-    <div class="all-content">
+    <div class="    ">
         <div class="all-contetn-inner">
 
             <div class="shell main" id="main">
@@ -154,14 +154,18 @@ $_SESSION['num'] = 1;
                 <!-- Сontent -->
                 <div class="contetn">
                     <?php require_once __DIR__ . '/src/add/ajax.php'; ?>
-                    <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>">
-                        <img src="" alt="">
-                    </div>
+                    <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>"></div>
+
                 </div>
+
+
+                
 
             </div>
         </div>
     </div>
+
+
 
 
     <script src="js/jquery.min.js"></script>

@@ -28,21 +28,24 @@ foreach ($items as $row) {
     <div class="content-block">
         <a class="content-href" href="index.php">
             <div class="contetn-inner">
-                <div class="contetn-right">
-                    <?php
-                    echo $_SESSION['num']++;
-                    ?>
-                    <div class="content-name">
-                        <?php echo $row['name']; ?>
-                    </div>
+                <div class="contetn-left">
+                    <?php echo $_SESSION['num']++; ?>
+                    <div class="content-name"> <?php echo $row['name']; ?> </div>
                 </div>
 
-                <div class="content-date">
-                    <?php echo $row['date']; ?>
-                </div>
+                <div class="content-date"> <?php echo $row['date']; ?> </div>
             </div>
         </a>
+
+        <div class="btn-delete" href="#">
+            <button class="btn-element btn-primary">Удалить</button>
+            <form class="button-set" action="delete.php" method="post">
+                <button class="btn-element btn-refusal" type="button">Нет</button>
+                <button class="btn-element btn-accept" type="submit">Да</button>
+            </form>
+        </div>
     </div>
+    <script src="js/profile/profile.js"></script>
 <?php
 }
 
@@ -57,3 +60,5 @@ try {
 $total = $stmt->fetch(PDO::FETCH_COLUMN);
 
 $amt = ceil($total / $limit);
+
+// include "js/profile/profile.js";

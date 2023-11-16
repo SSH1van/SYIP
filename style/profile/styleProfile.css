@@ -370,28 +370,34 @@ span {
     text-align: center;
     margin: 0;
 }
+
 .filelabel span {
     margin: 0;
 }
+
 .filelabel i {
     display: block;
     font-size: 30px;
     padding-bottom: 5px;
 }
+
 .filelabel i,
 .filelabel-title {
-  color: grey;
-  transition: 200ms color;
+    color: grey;
+    transition: 200ms color;
 }
+
 .filelabel:hover {
-  border: 2px solid #1665c4;
+    border: 2px solid #1665c4;
 }
+
 .filelabel:hover i,
 .filelabel:hover .filelabel-title {
-  color: #1665c4;
+    color: #1665c4;
 }
-#FileInput{
-    display:none;
+
+#FileInput {
+    display: none;
 }
 
 
@@ -409,6 +415,7 @@ span {
     border-radius: 5px;
     font-size: 18px;
 }
+
 .projects-btn {
     justify-content: center;
     width: 100%;
@@ -421,7 +428,7 @@ span {
 
 
 /* Content
-======================*/    
+======================*/
 
 .contetn {
     position: absolute;
@@ -437,6 +444,7 @@ span {
 }
 
 .content-block {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     width: 80%;
@@ -457,12 +465,14 @@ span {
 .contetn-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 100%;
     padding: 30px;
     color: hsla(229, 56%, 18%, 1);
 }
 
-.contetn-right {
+.contetn-left {
     display: flex;
     position: relative;
 }
@@ -473,9 +483,95 @@ span {
     left: 30px;
 }
 
+.content-date {
+    margin-right: 120px;
+}
+
 #showmore-triger {
     position: absolute;
     bottom: -50px;
-	text-align: center;
-	padding: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Button delete
+======================*/
+.btn-delete {
+    position: absolute;
+    right: 10px;
+    top: 31%;
+
+    width: 120px;
+    height: 30px;
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+.btn-element {
+    width: 120px;
+    height: 30px;
+
+    border: none;
+    padding: 0 1em;
+
+    font-size: 12px;
+    color: #fff;
+    line-height: 40px;
+
+    display: flex;
+    text-align: center;
+    background: none;
+    transition: background 0.3s ease;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #d65a57;
+}
+
+.btn-primary:hover {
+    background-color: #db6e6b;
+}
+
+.btn-refusal {
+    background-color: #9c9c9c;
+}
+
+.btn-refusal:hover {
+    background-color: #8f8f8f;
+}
+
+.btn-accept {
+    background-color: #787878;
+}
+
+.btn-accept:hover {
+    background-color: #6b6b6b;
+}
+
+.button-set {
+    display: flex;
+    margin-top: 1px;
+    height: 30px;
+}
+
+.button-set .btn-element {
+    width: 50%;
+    padding: 0;
+}
+
+.button-set {
+    margin-top: 0;
+}
+
+.btn-primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+.btn-primary.btn-active {
+    transform: translateY(-100%);
 }

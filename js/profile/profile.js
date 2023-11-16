@@ -1,8 +1,10 @@
+// Minimizing the side menu
 $('.btn').click(function () {
   $('.menu').toggleClass('close');
   $('.all-contetn-inner').toggleClass('close');
 });
 
+// Changing the position of the content
 document.addEventListener("DOMContentLoaded", () => {
   const navMain = document.getElementById("nav-main");
   const main = document.getElementById("main");
@@ -19,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// Adding a file
 $("#FileInput").on('change', function (e) {
   var labelVal = $(".filelabel-title").text();
   var oldfileName = $(this).val();
@@ -52,3 +56,16 @@ $("#FileInput").on('change', function (e) {
     $(".filelabel .filelabel-title").text("Ошибка!");
   }
 });
+
+
+// Deleting a file
+$(".btn-element").click(function () {
+  try {
+    $(".btn-active").removeClass("btn-active");
+  } catch (e) { }
+  $(this).addClass("btn-active");
+})
+
+$(".btn-refusal").click(function () {
+  $(".btn-active").removeClass("btn-active");
+})
