@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/src/helpers.php';
-checkAuth();
 
+checkAuth();
 $user = currentUser();
 $_SESSION['num'] = 1;
 ?>
