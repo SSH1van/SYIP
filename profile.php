@@ -105,19 +105,17 @@ $_SESSION['num'] = 1;
         </div>
     </div>
 
-
     <!-- Add Content -->
     <div class="all-content">
         <div class="all-contetn-inner">
-
-            <div class="shell main" id="main">
+            <div class="shell main open" id="main">
                 <div class="elemrnt-main">
                     Добро пожаловать,
                     <div class="main-user"><?php echo $user['name'] ?></div>
                 </div>
             </div>
 
-            <div class="shell projects open" id="projects">
+            <div class="shell projects" id="projects">
                 <div class="elemrnt-projects open">
                     <div class="projects-title">Мои работы</div>
                     <form class="projects-adding" enctype="multipart/form-data" action="src/add/add.php" method="post">
@@ -145,7 +143,6 @@ $_SESSION['num'] = 1;
                             <?php if (hasValidationError('city')) : ?>
                                 <small><?php echo validationErrorMessage('city'); ?></small>
                             <?php endif; ?>
-
                             <button class="projects-btn" type="submit">Добавить</button>
                         </div>
                     </form>
@@ -155,7 +152,6 @@ $_SESSION['num'] = 1;
                 <div class="contetn">
                     <?php require_once __DIR__ . '/src/add/ajax.php'; ?>
                     <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>"></div>
-
                 </div>
             </div>
         </div>
@@ -165,8 +161,6 @@ $_SESSION['num'] = 1;
     <script src="js/profile/ajax.js"></script>
     <script src="js/profile/profile.js"></script>
     <script src="js/profile/deleeteContent.js"></script>
-
-
 </body>
 
 </html>

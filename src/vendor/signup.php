@@ -39,7 +39,6 @@ if (strlen($pass) < 8) {
     setValidationError('pass', 'Пароль не менее 8 символов');
 }
 
-
 // Checking the error list
 if (!empty($_SESSION['validation'])) {
     setOldValue('name', $name);

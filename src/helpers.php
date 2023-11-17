@@ -54,7 +54,6 @@ function uploadFile(array $file, string $prefix = ''): string
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
     $fileName = $prefix . '_' . time() . ".$ext";
 
-
     if (!move_uploaded_file($file['tmp_name'], "$uploadPath/$fileName")) {
         die('Ошибка при загрузке файла на сервер');
     }

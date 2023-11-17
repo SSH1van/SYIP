@@ -35,12 +35,10 @@
         </symbol>
     </svg>
 
-
     <!-- Bubbles -->
     <div class="bubbles">
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
     </div>
-
 
     <!-- Header -->
     <div class="header_hover" id="headerHover">HoverMe</div>
@@ -59,10 +57,9 @@
                         </svg>
                     </a>
                 </div>
-            </div><!-- /.header_inner -->
-        </div><!-- /.container -->
-    </div><!-- /.header -->
-
+            </div>
+        </div>
+    </div>
 
     <!-- Intro -->
     <div class="intro" id="intro">
@@ -70,15 +67,14 @@
             <div class="intro_inner">
                 <div class="intro_title">Защита интеллектуальной собственности</div>
             </div>
+        </div>
+        <div class="intro_block">
+            <div class="intro_block_inner">
+                <img src="/img/icon/qr.png" alt="" class="intro_img">
             </div>
-            <div class="intro_block">
-                <div class="intro_block_inner">
-                    <img src="/img/icon/qr.png" alt="" class="intro_img">
-                </div>
-            
+
         </div>
     </div>
-
 
     <!-- For whom -->
     <div class="whom" id="whom">
@@ -109,9 +105,8 @@
                     С помощью сайта каждый ученик сможет стать официальным
                     обладателем прав на ИС</div>
             </card>
-        </div><!-- /.whom_inner -->
-    </div><!-- /.whom -->
-
+        </div>
+    </div>
 
     <!---- Timeline ---->
     <div class="title" id="timeline">Порядок организации защиты ИС</div>
@@ -123,8 +118,8 @@
                 <p>Каждому автору интеллектуальной деятельности необходимо
                     выражать свое собственное мнение, мысли, идеи,
                     не опираясь на доводы и размышления третьих лиц</p>
-            </div> <!-- /.cd-timeline-content -->
-        </div> <!-- /.cd-timeline-block -->
+            </div>
+        </div>
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-second"></div>
@@ -132,8 +127,8 @@
                 <h1>Регистрация аккаунта</h1>
                 <p>Каждый автор проходит регистрацию где указывает
                     ключевую информацию о себе и теме работы</p>
-            </div> <!-- /.cd-timeline-content -->
-        </div> <!-- /.cd-timeline-block -->
+            </div>
+        </div>
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-third"></div>
@@ -141,8 +136,8 @@
                 <h1>Добавление работы</h1>
                 <p>Добавить работу необходимо после
                     регистрации аккаунта в своём личном кабинете</p>
-            </div> <!-- /.cd-timeline-content -->
-        </div> <!-- /.cd-timeline-block -->
+            </div>
+        </div>
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-fourth"></div> <!-- cd-timeline-img -->
@@ -152,9 +147,9 @@
                     QR код в котором будет вся необходимая
                     информация для подтверждения наличия
                     интеллектуальной собственности</p>
-            </div> <!-- /.cd-timeline-content -->
-        </div> <!-- /.cd-timeline-block -->
-    </section> <!-- /.timeline -->
+            </div>
+        </div>
+    </section>
 
     <!---- Info ---->
     <div class="info">
@@ -180,7 +175,6 @@
         </div>
     </div>
 
-
     <!---- Footer ---->
     <div class="footer">
         <div class="copyright">
@@ -188,9 +182,8 @@
                 <div>Copyright © 2023 SYIP. Все права защищены.</div>
                 <div>Made <span>by Ivan</span></div>
             </div>
-        </div> <!-- /.copyright -->
-    </div> <!-- /.footer -->
-
+        </div>
+    </div>
 
     <!-- Javascript -->
     <script src="js/vue.min.js"></script>

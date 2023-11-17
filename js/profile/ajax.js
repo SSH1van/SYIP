@@ -24,7 +24,7 @@ function scrollMore() {
 		block_show = true;
 
 		$.ajax({
-			url: 'http://localhost:3000/src/add/ajax.php?page=' + page,
+			url: 'src/add/ajax.php?page=' + page,
 			dataType: 'html',
 			success: function (data) {
 				$('.contetn').append(data);

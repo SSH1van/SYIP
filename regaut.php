@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/src/helpers.php';
 checkGuest();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +27,6 @@ checkGuest();
 </head>
 
 <body>
-
     <!-- Bubbles -->
     <div class="bubbles reverce">
         <img src="img/background/bubbles.svg" class="bubbles_svg" alt="">
@@ -132,7 +129,6 @@ checkGuest();
 
     <script src="js/jquery.min.js"></script>
     <script src="js/regaut/regaut.js"></script>
-
 </body>
 
 </html>

@@ -12,6 +12,8 @@ body {
     overflow: hidden;
 }
 
+/* Registration and authorization forms
+======================*/
 .table {
     display: table;
     width: 100%;

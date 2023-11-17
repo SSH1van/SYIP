@@ -256,7 +256,6 @@ span {
 
 /* Add Content
 ======================*/
-
 .all-content {
     position: relative;
     top: 0;
@@ -429,7 +428,6 @@ span {
 
 /* Content
 ======================*/
-
 .contetn {
     position: absolute;
     top: 300px;
@@ -481,6 +479,7 @@ span {
     position: absolute;
     top: 0;
     left: 30px;
+    width: 500px;
 }
 
 .content-date {

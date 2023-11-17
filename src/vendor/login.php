@@ -5,18 +5,18 @@ require_once __DIR__ . '/../helpers.php';
 $email = $_POST['email'] ?? null;
 $pass = $_POST['pass'] ?? null;
 
-
+// Validation of data from the form
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    
+
     setOldValue('lemail', $email);
     setValidationError('lemail', 'Некорректая почта');
     setMessage('error', 'Ошибка валидации');
-    
+
     redirect('/regaut.php');
 }
 
+// User verification
 $user = findUser($email);
-
 if (!$user || hash("sha3-224", $pass) !== $user['pass']) {
     setOldValue('lemail', $email);
     setMessage('error', "Неверная почта или пароль");
@@ -24,5 +24,4 @@ if (!$user || hash("sha3-224", $pass) !== $user['pass']) {
 }
 
 $_SESSION['user']['id'] = $user['id'];
-
 redirect('/profile.php');

@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 // Adding a file
 $("#FileInput").on('change', function (e) {
   var labelVal = $(".filelabel-title").text();
@@ -57,4 +56,19 @@ $("#FileInput").on('change', function (e) {
   }
 });
 
+// Stay on the form Projects after deleting an item
+check = false;
+check = JSON.parse(localStorage.getItem("myKey"));
+if (check) {
+  $(".shell.main").removeClass("open");
+  $(".shell.projects").addClass("open");
+}
 
+$("#nav-projects").click(function () {
+  check = true;
+  localStorage.setItem("myKey", JSON.stringify(check));
+})
+
+$("#nav-main").click(function () {
+  localStorage.clear();
+})
