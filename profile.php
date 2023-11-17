@@ -126,7 +126,7 @@ $_SESSION['num'] = 1;
                                 <i class="fa fa-paperclip">
                                 </i>
                                 <span class="filelabel-title">
-                                    doc/pdf
+                                    docx/pdf
                                 </span>
                                 <input class="FileUpload1" id="FileInput" name="file" type="file" />
                             </label>
