@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../helpers.php';
 $user = currentUser();
+date_default_timezone_set("Europe/Moscow");
 
 // Getting values from a form
 $filePath = null;
@@ -65,4 +66,4 @@ try {
     die($e->getMessage());
 }
 
-redirect('/');
+redirect('/profile.php');

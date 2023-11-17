@@ -37,15 +37,15 @@ foreach ($items as $row) {
             </div>
         </a>
 
-        <div class="btn-delete" href="#">
+        <div class="btn-delete">
             <button class="btn-element btn-primary">Удалить</button>
-            <form class="button-set" action="delete.php" method="post">
+            <form class="button-set" action="src/add/delete.php" method="post">
                 <button class="btn-element btn-refusal" type="button">Нет</button>
-                <button class="btn-element btn-accept" type="submit">Да</button>
+                <button class="btn-element btn-accept" name="btn" value="<?php echo $row['date']; ?>" type="submit">Да</button>
             </form>
         </div>
     </div>
-    <script src="js/profile/profile.js"></script>
+    <script src="js/profile/deleeteContent.js"></script>
 <?php
 }
 
@@ -60,5 +60,3 @@ try {
 $total = $stmt->fetch(PDO::FETCH_COLUMN);
 
 $amt = ceil($total / $limit);
-
-// include "js/profile/profile.js";

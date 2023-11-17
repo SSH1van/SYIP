@@ -107,7 +107,7 @@ $_SESSION['num'] = 1;
 
 
     <!-- Add Content -->
-    <div class="    ">
+    <div class="all-content">
         <div class="all-contetn-inner">
 
             <div class="shell main" id="main">
@@ -157,20 +157,14 @@ $_SESSION['num'] = 1;
                     <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>"></div>
 
                 </div>
-
-
-                
-
             </div>
         </div>
     </div>
 
-
-
-
     <script src="js/jquery.min.js"></script>
     <script src="js/profile/ajax.js"></script>
     <script src="js/profile/profile.js"></script>
+    <script src="js/profile/deleeteContent.js"></script>
 
 
 </body>
