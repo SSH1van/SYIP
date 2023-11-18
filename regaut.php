@@ -10,9 +10,9 @@ checkGuest();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/style_fonts.css">
-    <link rel="stylesheet" href="style/regaut/styleRA.css">
+    <link rel="stylesheet" href="style/app.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/regaut/style.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">

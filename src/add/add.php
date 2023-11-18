@@ -9,6 +9,7 @@ date_default_timezone_set("Europe/Moscow");
 $filePath = null;
 $file = $_FILES['file'] ?? null;
 $name = $_POST['name'] ?? null;
+$author = $user['name'] ?? null;
 $city = $_POST['city'] ?? null;
 $iduser = $user['id'] ?? null;
 $date = date('Y-m-d H:i:s');
@@ -57,9 +58,10 @@ $imgPath = transparentWhiteQR($imgPath);
 
 // Connecting to the database and transmitting parameters
 $pdo = getPDO();
-$query = "INSERT INTO SYIPfiles (name, city, file, img, iduser, date) VALUES (:name, :city, :file, :img, :iduser, :date)";
+$query = "INSERT INTO SYIPfiles (name, author, city, file, img, iduser, date) VALUES (:name, :author, :city, :file, :img, :iduser, :date)";
 $params = [
     'name' => $name,
+    'author' => $author,
     'city' => $city,
     'file' => $filePath,
     'img' => $imgPath,

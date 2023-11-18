@@ -26,7 +26,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($items as $row) {
 ?>
     <div class="content-block">
-        <a class="content-href" href="workplace.php?<?php echo substr($row['file'], 19, 10); ?>">
+        <a class="content-href" href="workplace.php?<?php echo substr($row['file'], 19, 10); ?>" target="_blank" rel="noopener noreferrer">
             <div class="contetn-inner">
                 <div class="contetn-left">
                     <?php echo $_SESSION['num']++; ?>

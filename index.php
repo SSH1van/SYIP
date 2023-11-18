@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/style_fonts.css">
+    <link rel="stylesheet" href="style/app.css">
+    <link rel="stylesheet" href="style/fonts.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -48,7 +48,9 @@
                 <div class="navs">
                     <div class="nav" id="nav1" data-scroll="#intro">Главная</div>
                     <div class="nav" id="nav2" data-scroll="#whom">Для кого</div>
-                    <div class="nav" id="nav3" data-scroll="#timeline">Каким образом</div>
+                    <div class="nav" id="nav3" data-scroll="#timeline">Порядок</div>
+                    <div class="nav" id="nav4" data-scroll="#info">Информация</div>
+                    <div class="nav" id="nav5" data-scroll="#content">Работы</div>
                 </div>
                 <div class="login">
                     <a class="login_inner" href="/regaut.php">
@@ -152,26 +154,36 @@
     </section>
 
     <!---- Info ---->
-    <div class="info">
-        <div class="container">
-            <div class="info_inner">
-                <div class="info_text">Интеллектуальная собственность –
-                    это результат интеллектуальной деятельности человека,
-                    включающий в себя изобретения, произведения, компьютерные
-                    программы, фирменные наименования, товарные знаки,
-                    полезные модели, а также информационные ресурсы.
-                    <p>Существует несколько распространенных способов защиты ИС</p>
-                    <p>- Патенты</p>
-                    <p>- Авторские права</p>
-                    <p>- Товарные знаки</p>
-                    <p>- Коммерческая тайна</p>
-                    С помощью нашего сайта вы сможете защитить свой научный труд.
-                    Защищая интеллектуальную собственность, мы
-                    сохраняем оригинальные технологии, фирменные
-                    наименования, идеи и произведения, необходимые
-                    для объективной оценки ресурсов
-                </div>
+    <div class="info" id="info">
+        <div class="title">Информация</div>
+        <div class="info_inner">
+            <div class="info_text">Интеллектуальная собственность –
+                это результат интеллектуальной деятельности человека,
+                включающий в себя изобретения, произведения, компьютерные
+                программы, фирменные наименования, товарные знаки,
+                полезные модели, а также информационные ресурсы.
+                <p>Существует несколько распространенных способов защиты ИС</p>
+                <p>- Патенты</p>
+                <p>- Авторские права</p>
+                <p>- Товарные знаки</p>
+                <p>- Коммерческая тайна</p>
+                С помощью нашего сайта вы сможете защитить свой научный труд.
+                Защищая интеллектуальную собственность, мы
+                сохраняем оригинальные технологии, фирменные
+                наименования, идеи и произведения, необходимые
+                для объективной оценки ресурсов
             </div>
+        </div>
+    </div>
+
+    <!---- Content ---->
+    <div class="content-third" id="content">
+        <div class="container">
+            <div class="title">Псоледние работы</div>
+            <div class="contetn-inner">
+                <?php require_once __DIR__ . '/src/content.php'; ?>
+            </div>
+            <a href="" class="content-showmore">Просмотреть все</a>
         </div>
     </div>
 

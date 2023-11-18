@@ -1,17 +1,8 @@
 <?php
 require_once __DIR__ . '/../helpers.php';
 
-$user = currentUser();
-$iduser = $user['id'] ?? null;
-
 // Connecting to the structure
 $pdo = getPDO();
-
-// Getting author
-$query = "SELECT name FROM `SYIPusers` WHERE id = '$iduser'";
-$stmt = $pdo->prepare($query);
-$stmt->execute();
-$stmtName = $stmt->fetch(\PDO::FETCH_ASSOC);
 
 // Getting data from a database
 $query = "SELECT * FROM `SYIPfiles` WHERE file LIKE '%$url.%'";
@@ -26,7 +17,7 @@ foreach ($items as $row) {
     <div class="work-block">
         <img src="<?php echo $row['img']; ?>" alt="" class="work-img">
         <div class="work-block-inner">
-            <div class="work-text work-author"><?php echo $stmtName['name']; ?></div>
+            <div class="work-text work-author"><?php echo $row['author']; ?></div>
             <div class="work-text work-data"><?php echo $row['date']; ?></div>
 
             <a class="button" href="<?php echo $row['file']; ?>" download="<?php echo $row['name']; ?>">
