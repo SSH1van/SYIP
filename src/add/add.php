@@ -51,50 +51,18 @@ if (!empty($file)) {
     $filePath = uploadFile($file, 'file');
 }
 
-
-// Getting a link to a page and generating a qr code
-$str = "http://syip.ru/workplace.php?" . substr($filePath, 13, 10);
-QRcode::png($str, __DIR__ . '/tmp.png', 'H', 6, 2);
-
-$im = imagecreatefrompng(__DIR__ . '/tmp.png');
-$width = imagesx($im);
-$height = imagesy($im);
- 
-// Replacing white pixels with transparent
-$bg_color = imageColorAllocate($im, 0, 0, 0);
-imagecolortransparent ($im, $bg_color);
-for ($x = 0; $x < $width; $x++) {
-	for ($y = 0; $y < $height; $y++) {
-		$color = imagecolorat($im, $x, $y);
-		if ($color == 0) {
-			imageSetPixel($im, $x, $y, $bg_color);
-		}
-	}
-}
-
-// Replacing black pixels with white ones
-$fg_color = imageColorAllocate($im, 255, 255, 255);
-for ($x = 0; $x < $width; $x++) {
-	for ($y = 0; $y < $height; $y++) {
-		$color = imagecolorat($im, $x, $y);
-		if ($color == 1) {
-			imageSetPixel($im, $x, $y, $fg_color);
-		}
-	}
-}
- 
-// Output to the browser
-// header('Content-Type: image/x-png');
-// imagepng($im);
-
+// Getting a qr code
+$imgPath = createQR($filePath);
+$imgPath = transparentWhiteQR($imgPath);
 
 // Connecting to the database and transmitting parameters
 $pdo = getPDO();
-$query = "INSERT INTO SYIPfiles (name, city, file, iduser, date) VALUES (:name, :city, :file, :iduser, :date)";
+$query = "INSERT INTO SYIPfiles (name, city, file, img, iduser, date) VALUES (:name, :city, :file, :img, :iduser, :date)";
 $params = [
     'name' => $name,
     'city' => $city,
     'file' => $filePath,
+    'img' => $imgPath,
     'iduser' => $iduser,
     'date' => $date
 ];
@@ -105,4 +73,4 @@ try {
     die($e->getMessage());
 }
 
-// redirect('/profile.php');
+redirect('/profile.php');

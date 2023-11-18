@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__ . '/config.php';
 
-
 function redirect(string $path)
 {
     header("Location: $path");
@@ -45,11 +44,7 @@ function old(string $key)
 
 function uploadFile(array $file, string $prefix = ''): string
 {
-    $uploadPath = __DIR__ . '/../uploads';
-
-    if (!is_dir($uploadPath)) {
-        mkdir($uploadPath, 0777, true);
-    }
+    $uploadPath = __DIR__ . '/../uploads/files';
 
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
     $fileName = $prefix . '_' . time() . ".$ext";
@@ -58,7 +53,63 @@ function uploadFile(array $file, string $prefix = ''): string
         die('Ошибка при загрузке файла на сервер');
     }
 
-    return "uploads/$fileName";
+    return "uploads/files/$fileName";
+}
+
+function createQR(string $filePath = ''): string
+{
+    // Getting a link to a page and generating a qr code
+    $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . "/workplace.php?" . substr($filePath, 19, 10);
+    $imgPath = __DIR__ . '/../uploads/img/' . substr($filePath, 19, 10) .  '.png';
+    QRcode::png($url, $imgPath, 'H', 6, 2);
+    return $imgPath;
+}
+
+function transparentWhiteQR(string $imgPath = ''): string
+{
+    $im = imagecreatefrompng($imgPath);
+    $width = imagesx($im);
+    $height = imagesy($im);
+
+    // Replacing white pixels with transparent
+    $bg_color = imageColorAllocate($im, 0, 0, 0);
+    imagecolortransparent($im, $bg_color);
+    for ($x = 0; $x < $width; $x++) {
+        for ($y = 0; $y < $height; $y++) {
+            $color = imagecolorat($im, $x, $y);
+            if ($color == 0) {
+                imageSetPixel($im, $x, $y, $bg_color);
+            }
+        }
+    }
+
+    // Replacing black pixels with white ones
+    $fg_color = imageColorAllocate($im, 255, 255, 255);
+    for ($x = 0; $x < $width; $x++) {
+        for ($y = 0; $y < $height; $y++) {
+            $color = imagecolorat($im, $x, $y);
+            if ($color == 1) {
+                imageSetPixel($im, $x, $y, $fg_color);
+            }
+        }
+    }
+
+    // Save new image
+    imagepng($im, $imgPath);
+    $imgPath = substr($imgPath, -26);
+    return $imgPath;
+}
+
+function deleteQR(string $path = ''): void
+{
+    $filePath = __DIR__ . '/..//' . $path;
+    $imgPath = __DIR__ . '/../uploads/img/' . substr($path, 19, 10) . '.png';
+
+    if (file_exists($filePath) && file_exists($imgPath)) {
+        unlink($filePath);
+        unlink($imgPath);
+    } else { /* File not found. */
+    }
 }
 
 function setMessage(string $key, string $message): void

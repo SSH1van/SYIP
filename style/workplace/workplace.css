@@ -21,12 +21,13 @@
 }
 
 .work-img {
-    width: 400px;
+    width: 300px;
 }
 
 .work-block {
     display: flex;
     justify-content: space-between;
+    padding-top: 5%;
 }
 
 .work-block-inner {

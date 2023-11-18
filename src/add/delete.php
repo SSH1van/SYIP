@@ -6,8 +6,22 @@ $user = currentUser();
 $date = $_POST['btn'] ?? null;
 $iduser = $user['id'] ?? null;
 
-// Connecting to the database and performing a deletion
+// Connecting to the structure
 $pdo = getPDO();
+
+// Getting the path from the database to delete QR code on the server
+$query = "SELECT file FROM `SYIPfiles` WHERE date = '$date' AND iduser = '$iduser'";
+$stmt = $pdo->prepare($query);
+try {
+    $stmt->execute();
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
+$path = $stmt->fetch(PDO::FETCH_ASSOC);
+$npath = $path['file'];
+deleteQR($npath);
+
+// Performing a deletion
 $query = "DELETE FROM `SYIPfiles` WHERE date = '$date' AND iduser = '$iduser'";
 $stmt = $pdo->prepare($query);
 try {

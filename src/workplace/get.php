@@ -13,20 +13,18 @@ $stmt = $pdo->prepare($query);
 $stmt->execute();
 $stmtName = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-
 // Getting data from a database
 $query = "SELECT * FROM `SYIPfiles` WHERE file LIKE '%$url.%'";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
 // Markup of output data
 foreach ($items as $row) {
 ?>
     <div class="work-title"><?php echo $row['name']; ?></div>
     <div class="work-block">
-        <img src="img/icon/qr.png" alt="" class="work-img">
+        <img src="<?php echo $row['img']; ?>" alt="" class="work-img">
         <div class="work-block-inner">
             <div class="work-text work-author"><?php echo $stmtName['name']; ?></div>
             <div class="work-text work-data"><?php echo $row['date']; ?></div>
