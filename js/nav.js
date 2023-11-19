@@ -106,7 +106,6 @@ let elementId;
 let elementOffset;
 
 $("[data-scroll]").on("click", function (eventImportant) {
-    console.log($(this)[0]);
     elementId = $(this).data("scroll");
     elementOffset = $(elementId).offset().top;
 
