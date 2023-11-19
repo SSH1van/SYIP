@@ -50,6 +50,11 @@ $_SESSION['num'] = 1;
                 <path d="M24.98 30.009h-23v-25h14.050l2.022-1.948-0.052-0.052h-16.020c-1.105 0-2 0.896-2 2v25c0 1.105 0.895 2 2 2h23c1.105 0 2-0.895 2-2v-14.646l-2 1.909v12.736zM30.445 1.295c-0.902-0.865-1.898-1.304-2.961-1.304-1.663 0-2.876 1.074-3.206 1.403-0.468 0.462-13.724 13.699-13.724 13.699-0.104 0.106-0.18 0.235-0.219 0.38-0.359 1.326-2.159 7.218-2.176 7.277-0.093 0.302-0.010 0.631 0.213 0.851 0.159 0.16 0.373 0.245 0.591 0.245 0.086 0 0.172-0.012 0.257-0.039 0.061-0.020 6.141-1.986 7.141-2.285 0.132-0.039 0.252-0.11 0.351-0.207 0.631-0.623 12.816-12.618 13.802-13.637 1.020-1.052 1.526-2.146 1.507-3.253-0.019-1.094-0.55-2.147-1.575-3.129zM29.076 6.285c-0.556 0.574-4.914 4.88-12.952 12.798l-0.615 0.607c-0.921 0.285-3.128 0.994-4.796 1.532 0.537-1.773 1.181-3.916 1.469-4.929 1.717-1.715 13.075-13.055 13.506-13.48 0.084-0.084 0.851-0.821 1.795-0.821 0.536 0 1.053 0.244 1.577 0.748 0.627 0.602 0.95 1.179 0.959 1.72 0.010 0.556-0.308 1.171-0.943 1.827z"></path>
             </g>
         </symbol>
+        <symbol id="allnote">
+            <g viewBox="0 0 24 24">
+                <path fill="none" stroke-width=".7" stroke-linecap="round" d="M3.5 5.5h5m-5 2h5m-5 2h5m2-6.29V11c0 .28-.22.5-.5.5H2c-.28 0-.5-.22-.5-.5V1c0-.28.22-.5.5-.5h5.79c.13 0 .26.05.35.15l2.21 2.21c.1.09.15.21.15.35zM7.5.5V3c0 .28.22.5.5.5h2.5" />
+            </g>
+        </symbol>
     </svg>
 
     <!-- Bubbles -->
@@ -89,6 +94,15 @@ $_SESSION['num'] = 1;
                             <use xlink:href="#note"></use>
                         </svg>
                     </div>
+                    <a class="menu-nav common href" href="content.php">
+                        <svg class="menu-icon move">
+                            <use xlink:href="#allnote"></use>
+                        </svg>
+                        <span>Все работы</span>
+                        <svg class="menu-icon move small">
+                            <use xlink:href="#allnote"></use>
+                        </svg>
+                    </a>
                 </div>
                 <form action="src/vendor/logout.php" method="post" class="user">
                     <button role="button">
@@ -149,14 +163,14 @@ $_SESSION['num'] = 1;
                 </div>
 
                 <!-- Сontent -->
-                <div class="contetn">
+                <div class="content">
                     <?php require_once __DIR__ . '/src/add/ajax.php'; ?>
                     <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>"></div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/profile/ajax.js"></script>
     <script src="js/profile/profile.js"></script>

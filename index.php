@@ -181,9 +181,9 @@
         <div class="container">
             <div class="title">Псоледние работы</div>
             <div class="contetn-inner">
-                <?php require_once __DIR__ . '/src/content.php'; ?>
+                <?php require_once __DIR__ . '/src/indexContent.php'; ?>
             </div>
-            <a href="" class="content-showmore">Просмотреть все</a>
+            <a href="content.php" class="content-showmore">Просмотреть все</a>
         </div>
     </div>
 

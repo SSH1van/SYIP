@@ -1,5 +1,6 @@
 <?php
-$url = substr($_SERVER['REQUEST_URI'], -10);
+require_once __DIR__ . '/src/session.php';
+$_SESSION['num'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@ $url = substr($_SERVER['REQUEST_URI'], -10);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style/app.css">
-    <link rel="stylesheet" href="style/workplace/style.css">
+    <link rel="stylesheet" href="style/content/style.css">
     <link rel="stylesheet" href="style/fonts.css">
 
     <!-- Favicons -->
@@ -32,15 +33,22 @@ $url = substr($_SERVER['REQUEST_URI'], -10);
     </div>
 
 
-    <!-- Work -->
-    <div class="work">
-        <div class="container">
-            <div class="work-inner">
-                <?php require_once __DIR__ . '/src/workplace/get.php'; ?>
-            </div>
-        </div>
+
+    <!-- Content -->
+    <div class="title">Все работы
+        <a href="javascript:history.back()" calss="arrow-back">
+            <svg viewBox="0 0 200 200">
+                <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165ZM116.5,57.5a9.67,9.67,0,0,0-14,0L74,86a19.92,19.92,0,0,0,0,28.5L102.5,143a9.9,9.9,0,0,0,14-14l-28-29L117,71.5C120.5,68,120.5,61.5,116.5,57.5Z" />
+            </svg>
+        </a>
+    </div>
+    <div class="content">
+        <?php require_once __DIR__ . '/src/content.php'; ?>
+        <div id="showmore-triger" data-page="1" data-max="<?php echo $amt; ?>"></div>
     </div>
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/content/content.js"></script>
 </body>
 
 </html>

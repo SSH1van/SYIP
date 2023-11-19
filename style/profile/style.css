@@ -55,6 +55,10 @@ button {
     stroke: hsla(23, 62%, 42%, 1);
 }
 
+.menu.close a.menu-nav:hover use {
+    stroke: hsla(23, 62%, 42%, 1);
+}
+
 .menu-inner {
     transition-duration: 0.5s;
     height: 100%;
@@ -88,6 +92,14 @@ use {
 
 .menu-nav:last-child {
     border-bottom: 2px solid #fff;
+}
+
+a.menu-nav {
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    text-decoration: none;
+    color: #fff;
 }
 
 .user {
@@ -126,6 +138,16 @@ button:hover {
     height: 50px;
     width: 50px;
     transition-duration: 0.5s;
+    
+}
+
+a use {
+    transform: scale(2.6);
+    stroke: #fff;
+}
+
+a.href:hover use {
+    stroke: hsla(229, 56%, 18%, 1);
 }
 
 .menu-icon.move {
@@ -428,7 +450,7 @@ span {
 
 /* Content
 ======================*/
-.contetn {
+.content {
     position: absolute;
     top: 300px;
     right: 0;
@@ -493,7 +515,6 @@ span {
 #showmore-triger {
     position: absolute;
     bottom: -50px;
-    text-align: center;
     padding: 10px;
 }
 

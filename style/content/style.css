@@ -1,0 +1,57 @@
+/* Content
+======================*/
+.title {
+    position: relative;
+    margin: 0;
+}
+
+a {
+    position: absolute;
+    content: "";
+    top: 15%;
+    left: 0;
+    z-index: 1;
+
+    border: 0;
+    padding: 20px;
+}
+
+a svg {
+    width: 60px;
+    fill: #fff;
+    transition-duration: 0.5s;
+}
+
+a:hover svg { 
+    transform: scale(1.2);
+    fill: hsla(23, 62%, 42%, 1);
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.contetn-left {
+    justify-content: normal;
+    position: relative;
+    width:max-content;
+}
+
+.content-name {
+    position: absolute;
+    left: 30px;
+    width: max-content;
+}
+
+.content-author {
+    width: max-content;
+}
+
+#showmore-triger {
+    position: absolute;
+    bottom: -100px;
+    padding: 10px;
+}

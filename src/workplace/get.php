@@ -19,6 +19,7 @@ foreach ($items as $row) {
         <div class="work-block-inner">
             <div class="work-text work-author"><?php echo $row['author']; ?></div>
             <div class="work-text work-data"><?php echo $row['date']; ?></div>
+            <div class="work-text work-data"><?php echo $row['city']; ?></div>
 
             <a class="button" href="<?php echo $row['file']; ?>" download="<?php echo $row['name']; ?>">
                 <button class="button__self">

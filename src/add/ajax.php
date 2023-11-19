@@ -50,7 +50,7 @@ foreach ($items as $row) {
 }
 
 // The number of content downloads when scrolling
-$query = "SELECT COUNT(`id`) FROM `SYIPfiles`";
+$query = "SELECT COUNT(`id`) FROM `SYIPfiles` WHERE iduser = '$iduser'";
 $stmt = $pdo->prepare($query);
 try {
     $stmt->execute();

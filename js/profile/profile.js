@@ -2,6 +2,13 @@
 $('.btn').click(function () {
   $('.menu').toggleClass('close');
   $('.all-contetn-inner').toggleClass('close');
+  localStorage.setItem("menu-close", JSON.stringify(true));
+});
+$('.btn.back').click(function () {
+  localStorage.setItem("menu-close", JSON.stringify(true));
+});
+$('.btn.burger').click(function () {
+  localStorage.setItem("menu-close", JSON.stringify(false));
 });
 
 // Changing the position of the content
@@ -13,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navMain.addEventListener("click", () => {
     proj.classList.remove('open');
-    main.classList.add("open")
+    main.classList.add("open");
   });
   navProj.addEventListener("click", () => {
     main.classList.remove('open');
-    proj.classList.add("open")
+    proj.classList.add("open");
   });
 });
 
@@ -57,16 +64,17 @@ $("#FileInput").on('change', function (e) {
 });
 
 // Stay on the form Projects after deleting an item
-check = false;
-check = JSON.parse(localStorage.getItem("myKey"));
-if (check) {
+if (JSON.parse(localStorage.getItem("position"))) {
   $(".shell.main").removeClass("open");
   $(".shell.projects").addClass("open");
 }
+if (JSON.parse(localStorage.getItem("menu-close"))) {
+  $(".menu").addClass("close");
+  $(".all-contetn-inner").addClass("close");
+}
 
 $("#nav-projects").click(function () {
-  check = true;
-  localStorage.setItem("myKey", JSON.stringify(check));
+  localStorage.setItem("position", JSON.stringify(true));
 })
 
 $("#nav-main").click(function () {
