@@ -107,7 +107,7 @@ checkGuest();
                                         <?php endif; ?>
                                     </label>
                                     <label for="name">
-                                        <input placeholder="Имя" name="name" type="text" value="<?php echo old('name') ?>" <?php echo validationErrorAttr('name'); ?> />
+                                        <input placeholder="ФИО" name="name" type="text" value="<?php echo old('name') ?>" <?php echo validationErrorAttr('name'); ?> />
                                         <?php if (hasValidationError('name')) : ?>
                                             <small><?php echo validationErrorMessage('name'); ?></small>
                                         <?php endif; ?>

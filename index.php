@@ -179,7 +179,7 @@
     <!---- Content ---->
     <div class="content-third" id="content">
         <div class="container">
-            <div class="title">Псоледние работы</div>
+            <div class="title">Последние работы</div>
             <div class="contetn-inner">
                 <?php require_once __DIR__ . '/src/indexContent.php'; ?>
             </div>
