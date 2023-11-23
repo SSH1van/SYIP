@@ -220,6 +220,9 @@ svg {
     height: 50px;
     fill: hsla(229, 56%, 18%, 1);
     cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
 }
 
@@ -283,6 +286,9 @@ svg:hover {
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
     opacity: 0;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
 }
 

@@ -19,6 +19,9 @@
 .title a svg {
     width: 60px;
     fill: #fff;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 

@@ -77,6 +77,9 @@ a {
     color: #fff;
     cursor: pointer;
     outline: 0;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -93,6 +96,9 @@ a {
     height: 100%;
     background: inherit;
     border-radius: inherit;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
     transition: inherit;
 }
 
@@ -103,6 +109,9 @@ a {
     display: flex;
     align-items: center;
     border-radius: inherit;
+    -webkit-transition: 125ms;
+    -moz-transition: 125ms;
+    -o-transition: 125ms;
     transition: 125ms;
 }
 

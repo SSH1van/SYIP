@@ -29,6 +29,9 @@ body {
     background-color: hsla(229, 56%, 18%, 1);
     width: 20%;
     height: 100vh;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     z-index: 1;
 }
@@ -60,6 +63,9 @@ button {
 }
 
 .menu-inner {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     height: 100%;
 }
@@ -82,6 +88,9 @@ button {
 }
 
 use {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     fill: #fff;
 }
@@ -120,6 +129,9 @@ button {
     height: 80px;
     padding-left: 20px;
 
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     cursor: pointer;
 }
@@ -137,6 +149,9 @@ button:hover {
 .menu-icon {
     height: 50px;
     width: 50px;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     
 }
@@ -197,6 +212,9 @@ span {
     cursor: pointer;
     right: 0;
     top: 0;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -208,6 +226,9 @@ span {
     width: 30px;
     top: 15px;
     background-color: #fff;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -222,6 +243,9 @@ span {
     background-color: #fff;
     content: "";
     top: -12px;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -232,6 +256,9 @@ span {
     background-color: #fff;
     content: "";
     top: 12px;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -247,6 +274,9 @@ span {
     content: "";
     top: -10px;
     transform: rotateZ(-45deg) scaleX(0.5) translate(-23px, -4px);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -258,6 +288,9 @@ span {
     content: "";
     top: 10px;
     transform: rotateZ(45deg) scaleX(0.5) translate(-23px, 4px);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -296,6 +329,9 @@ span {
     width: 80%;
     height: inherit;
 
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -386,6 +422,9 @@ span {
     align-items: center;
 
     padding: 5px;
+    -webkit-transition: border 300ms ease;
+    -moz-transition: border 300ms ease;
+    -o-transition: border 300ms ease;
     transition: border 300ms ease;
     cursor: pointer;
     text-align: center;
@@ -405,6 +444,9 @@ span {
 .filelabel i,
 .filelabel-title {
     color: grey;
+    -webkit-transition: 200ms color;
+    -moz-transition: 200ms color;
+    -o-transition: 200ms color;
     transition: 200ms color;
 }
 
@@ -469,6 +511,9 @@ span {
     border-radius: 5px;
     width: 80%;
 
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
     margin: 10px 0;
 }
@@ -546,6 +591,9 @@ span {
     display: flex;
     text-align: center;
     background: none;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
     transition: background 0.3s ease;
     justify-content: center;
 }
@@ -593,6 +641,9 @@ span {
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
     transition: transform 0.5s ease;
 }
 
