@@ -25,7 +25,7 @@ if (empty($city)) {
 
 // Checking the correctness of the file
 if ($_FILES["file"]["error"] == 4) {
-    setValidationError('file', 'Файл нне загружен');
+    setValidationError('file', 'Файл не загружен');
 } else {
     $types = ['docx', 'pdf'];
     $file_type =  pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);

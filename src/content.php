@@ -26,9 +26,9 @@ foreach ($items as $row) {
 ?>
     <div class="content-block">
         <a class="content-href" href="workplace.php?<?php echo substr($row['file'], 19, 10); ?>" target="_blank" rel="noopener noreferrer">
-            <div class="contetn-into">
-                <div class="contetn-left">
-                    <?php echo $_SESSION['num']++; ?>
+            <div class="content-into">
+                <div class="content-left">
+                    <div class="content-num"><?php echo $_SESSION['num']++; ?></div>
                     <div class="content-name"> <?php echo $row['name']; ?> </div>
                 </div>
                 <div class="content-author"> <?php echo $row['author']; ?> </div>

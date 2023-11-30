@@ -941,7 +941,7 @@ h1 {
     text-decoration: none;
 }
 
-.contetn-into {
+.content-into {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -950,10 +950,20 @@ h1 {
     color: hsla(229, 56%, 18%, 1);
 }
 
-.contetn-left {
+.content-left {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.content-name {
+    width: 600px;
+    margin-right: 40px;
+}
+
+.content-author {
+    display: flex;
+    align-items: center;
 }
 
 .content-showmore {

@@ -27,7 +27,7 @@ body {
     flex-direction: column;
 
     background-color: hsla(229, 56%, 18%, 1);
-    width: 20%;
+    width: 300px;
     height: 100vh;
     -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
@@ -47,7 +47,7 @@ button {
 }
 
 .menu.close {
-    transform: translate(-80%, 0);
+    transform: translate(-230px, 0);
 }
 
 .menu.close .menu-nav:hover use {
@@ -527,7 +527,7 @@ span {
     text-decoration: none;
 }
 
-.contetn-inner {
+.content-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -538,22 +538,26 @@ span {
     color: hsla(229, 56%, 18%, 1);
 }
 
-.contetn-left {
+.content-left {
     display: flex;
     position: relative;
     width: auto;
 }
 
-.content-name {
+.content-num {
     position: absolute;
     top: 0;
-    left: 30px;
-    width: 500px;
-    width: max-content;
+    left: 0;
+}
+
+.content-name {
+    margin: 0 40px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .content-date {
-    margin-right: 120px;
+    margin-right: 130px;
     width: auto;
 }
 
@@ -565,10 +569,17 @@ span {
 
 /* Button delete
 ======================*/
-.btn-delete {
+.btn-shell {
     position: absolute;
-    right: 10px;
-    top: 31%;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.btn-delete {
+    position: relative;
 
     width: 120px;
     height: 30px;

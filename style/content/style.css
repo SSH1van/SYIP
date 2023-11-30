@@ -37,20 +37,28 @@
     align-items: center
 }
 
-.contetn-left {
-    justify-content: normal;
+.content-left {
     position: relative;
-    width:max-content;
+    justify-content: normal;
+    width: auto;
+}
+
+.content-num { 
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .content-name {
-    position: absolute;
-    left: 30px;
-    width: max-content;
+    margin: 0 40px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .content-author {
     width: max-content;
+    display: flex;
+    align-items: center;
 }
 
 #showmore-triger {

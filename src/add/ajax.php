@@ -27,22 +27,23 @@ foreach ($items as $row) {
 ?>
     <div class="content-block">
         <a class="content-href" href="workplace.php?<?php echo substr($row['file'], 19, 10); ?>" target="_blank" rel="noopener noreferrer">
-            <div class="contetn-inner">
-                <div class="contetn-left">
-                    <?php echo $_SESSION['num']++; ?>
+            <div class="content-inner">
+                <div class="content-left">
+                    <div class="content-num"><?php echo $_SESSION['num']++; ?></div>
                     <div class="content-name"> <?php echo $row['name']; ?> </div>
                 </div>
 
                 <div class="content-date"> <?php echo $row['date']; ?> </div>
             </div>
         </a>
-
-        <div class="btn-delete">
-            <button class="btn-element btn-primary">Удалить</button>
-            <form class="button-set" action="src/add/delete.php" method="post">
-                <button class="btn-element btn-refusal" type="button">Нет</button>
-                <button class="btn-element btn-accept" name="btn" value="<?php echo $row['date']; ?>" type="submit">Да</button>
-            </form>
+        <div class="btn-shell">
+            <div class="btn-delete">
+                <button class="btn-element btn-primary">Удалить</button>
+                <form class="button-set" action="src/add/delete.php" method="post">
+                    <button class="btn-element btn-refusal" type="button">Нет</button>
+                    <button class="btn-element btn-accept" name="btn" value="<?php echo $row['date']; ?>" type="submit">Да</button>
+                </form>
+            </div>
         </div>
     </div>
     <script src="js/profile/deleeteContent.js"></script>
