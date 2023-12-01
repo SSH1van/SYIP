@@ -1,3 +1,5 @@
+/* When you hover the mouse over the top,
+the navigation bar will appear */
 let header = $("#header");
 
 let intro = $("#intro");
@@ -18,10 +20,14 @@ let nav5 = $("#nav5");
 checkScroll(scrollPosLast, scrollPos);
 chekScrollPos(scrollPos);
 
+/* When you hover the mouse over the top,
+the navigation bar will appear */
 $("#headerHover").hover(function () {
     header.removeClass("fixed");
 });
 
+/* Deleting the active navigation class 
+when hovering over another navigation element */
 nav1.mouseenter(function () {
     let active = $(".nav.active");
     active.removeClass("active");
@@ -62,7 +68,7 @@ nav5.mouseout(function () {
     chekScrollPos(scrollPos);
 });
 
-
+/* Smooth or resize window */
 $(window).on("scroll resize", function () {
     scrollPosLast = scrollPos;
     scrollPos = $(this).scrollTop();
@@ -71,14 +77,18 @@ $(window).on("scroll resize", function () {
     checkScroll(scrollPosLast, scrollPos);
 });
 
+
 function checkScroll(scrollPosLast, scrollPos) {
     if (scrollPos > scrollPosLast) {
         header.addClass("fixed");
+        navs.removeClass("show"); /* Mobile part */
     } else if (scrollPos < scrollPosLast || scrollPos == 0) {
         header.removeClass("fixed");
     }
 }
 
+/* Depending on the current position,
+a certain navigation element will be active */
 function chekScrollPos(scrollPos) {
     let active = $(".nav.active");
 
@@ -99,7 +109,6 @@ function chekScrollPos(scrollPos) {
         nav5.addClass("active");
     } 
 }
-
 
 /* Smooth scroll */
 let elementId;

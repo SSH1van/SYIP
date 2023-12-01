@@ -45,13 +45,14 @@
     <div class="header" id="header">
         <div class="container">
             <div class="header_inner">
-                <div class="navs">
+                <div class="navs" id="navs">
                     <div class="nav" id="nav1" data-scroll="#intro">Главная</div>
                     <div class="nav" id="nav2" data-scroll="#whom">Для кого</div>
                     <div class="nav" id="nav3" data-scroll="#timeline">Порядок</div>
                     <div class="nav" id="nav4" data-scroll="#info">Информация</div>
                     <div class="nav" id="nav5" data-scroll="#content">Работы</div>
                 </div>
+                
                 <div class="login">
                     <a class="login_inner" href="/regaut.php">
                         <svg class="login_icon">
@@ -59,6 +60,10 @@
                         </svg>
                     </a>
                 </div>
+
+                <button class="burger" id="burger">
+					<span class="burger_menu"></span>
+				</button>
             </div>
         </div>
     </div>
@@ -192,7 +197,6 @@
         <div class="copyright">
             <div class="copyright_text">
                 <div>Copyright © 2023 SYIP. Все права защищены.</div>
-                <div>Made <span>by Ivan</span></div>
             </div>
         </div>
     </div>
@@ -203,6 +207,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/timeline.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/mobile.js"></script>
 </body>
 
 </html>
