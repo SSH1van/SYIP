@@ -48,8 +48,8 @@ checkGuest();
                 <div class="info-item">
                     <div class="table">
                         <div class="table-cell">
-                            <p>Нет аккаунта?</p>
-                            <div class="btn another">Создать</div>
+                        <p>Нет аккаунта?</p>
+                            <div class="btn another"><span>Создать</span></div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +81,7 @@ checkGuest();
                         </div>
                     </div>
                 </div>
+
                 <div class="form-item sign-up">
                     <div class="table">
                         <div class="table-cell">

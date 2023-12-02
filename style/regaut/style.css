@@ -93,7 +93,7 @@ body {
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     -webkit-transition: all 0.3s;
-    transition: all 0.3s;  
+    transition: all 0.3s;
 }
 
 .container .container-forms .container-info {
@@ -327,6 +327,12 @@ svg:hover {
     border: hsla(229, 56%, 18%, 1) 2px solid;
 }
 
+.btn.another.nohover:hover {
+    background: transparent;
+    color: #fff;
+    border: #fff 2px solid;
+}
+
 .error_message {
     color: hsla(23, 62%, 42%, 1);
     font-size: 16px;
@@ -365,7 +371,7 @@ svg:hover {
 label {
     display: flex;
     text-align: center;
-    color:hsla(23, 62%, 42%, 1);
+    color: hsla(23, 62%, 42%, 1);
     flex-direction: column;
     margin-bottom: 10px;
 }
@@ -379,4 +385,125 @@ label {
     color: hsla(23, 62%, 42%, 1);
     margin-bottom: 10px;
     font-size: 15px;
+}
+
+
+/* Media
+======================*/
+@media (max-width: 640px) {
+
+    .container {
+        width: 300px;
+    }
+
+    .container .box {
+        display: none;
+    }
+
+    .container .container-form {
+        left: -2px;
+    }
+
+    .container .container-forms .container-info {
+        position: absolute;
+        top: 300px;
+    }
+
+    .container .container-forms .container-info .info-item:first-child {
+        display: none;
+    }
+
+    .container .container-forms .container-info .info-item {
+        z-index: 1;
+        position: absolute;
+        height: 38px;
+        top: 0;
+    }
+
+    .container .container-forms .container-info .info-item:nth-child(2) .table-cell {
+        padding-left: 0;
+    }
+
+    .container .container-forms .container-info .info-item p {
+        display: none;
+    }
+
+    .btn.another {
+        padding: 6px 15px;
+        width: 220px;
+        color: hsla(229, 56%, 18%, 1);
+        border: hsla(229, 56%, 18%, 1) solid 1px;
+    }
+
+    /* Replace text button */
+    .btn.another span {
+        display: none;
+        position: relative;
+    }
+
+    .btn.another::after {
+        content: "Нет акаунта?";
+    }
+
+    .container.log-in .container-forms .container-info .info-item .table .table-cell .btn.another::after {
+        content: "Есть акаунт?";
+    }
+
+
+    /* Hover */
+    .btn.another:hover {
+        background: hsla(229, 56%, 18%, 1);
+        color: #fff;
+        border: #fff 2px solid;
+    }
+
+    .btn.another.nohover:hover {
+        background: transparent;
+        color: hsla(229, 56%, 18%, 1);
+        border: hsla(229, 56%, 18%, 1) 1px solid;
+    }
+
+
+    /* Singup */
+    .container.log-in .container-form {
+        left: 0;
+    }
+
+    .container .container-form .btn {
+        margin-top: 5px;
+    }
+
+    .notice.error {
+        margin-bottom: 5px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        zoom: 80%;
+    }
+}
+@media (max-width: 260px) {
+    .container {
+        zoom: 70%;
+    }
+}
+@media (max-width: 225px) {
+    .container {
+        zoom: 60%;
+    }
+}
+@media (max-width: 195px) {
+    .container {
+        zoom: 50%;
+    }
+}
+@media (max-width: 165px) {
+    .container {
+        zoom: 40%;
+    }
 }

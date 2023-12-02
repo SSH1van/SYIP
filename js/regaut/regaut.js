@@ -13,8 +13,6 @@ $(".info-item .btn").click(function () {
   if ($(".container").hasClass("log-in")) {
     check = true;
     localStorage.setItem("myKey", JSON.stringify(check));
-
-
   } else {
     check = false;
     localStorage.clear();
@@ -25,3 +23,11 @@ $(".info-item .btn").click(function () {
 $('body').bind('beforeunload', function () {
   check = false;
 });
+
+
+/* Without hover for touch devices */
+let touchDevices = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+
+if (touchDevices) {
+  $(".btn.another").addClass("nohover");
+}

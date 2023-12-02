@@ -1174,6 +1174,10 @@ h1 {
         margin: 0;
     }
 
+    .info_text {
+        font-size: 14px;
+    }
+
     /* Title */
     .title {
         font-size: 36px;
@@ -1217,7 +1221,7 @@ h1 {
     }
 
     .cd-timeline-content p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     #cd-timeline {
@@ -1226,6 +1230,15 @@ h1 {
 }
 
 @media (max-width: 500px) {
+
+    .info_text {
+        font-size: 12px;
+    }
+
+    .content-showmore {
+        font-size: 12px;
+        width: max-content;
+    }
 
     /* Title */
     .title {
@@ -1245,6 +1258,11 @@ h1 {
 
     .intro_img {
         width: 220px;
+    }
+
+    /* Timeline */
+    .cd-timeline-content p {
+        font-size: 12px;
     }
 
 }
