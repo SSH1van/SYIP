@@ -270,11 +270,14 @@ a {
     border: 0;
     padding: 9px 2px;
     cursor: pointer;
-    width: 200px;
+    width: 50px;
+    height: 40px;
+    z-index: 1;
 
     display: none;
     justify-content: center;
     align-items: center;
+    margin-right: 80px;
 }
 
 .burger_menu {
@@ -1226,7 +1229,7 @@ h1 {
     }
 
     .burger {
-        width: 120px;
+        margin-right: 40px;
     }
 
     .login {
@@ -1240,6 +1243,10 @@ h1 {
 }
 
 @media (max-width: 500px) {
+    .title {
+        font-size: 28px;
+    }
+
     .content-into {
         zoom: 60%;
     }
@@ -1285,7 +1292,7 @@ h1 {
     }
 
     .title {
-        font-size: 22px;
+        font-size: 18px;
         height: 80px;
     }
 
@@ -1294,6 +1301,14 @@ h1 {
     }
 
     .burger {
+        zoom: 80%;
+    }
+
+    .content-block {
+        margin: 5px 0;
+    }
+
+    .content-showmore {
         zoom: 80%;
     }
 
@@ -1347,8 +1362,16 @@ h1 {
 }
 
 @media (max-width: 250px) {
+    .title {
+        font-size: 16px;
+    }
+
     .content-into {
         zoom: 40%;
+    }
+
+    .content-showmore {
+        zoom: 60%;
     }
 
     .login {
@@ -1358,7 +1381,7 @@ h1 {
 
     .burger {
         zoom: 70%;
-        width: 100px;
+        margin-right: 20px;
     }
 
     .info_text {
