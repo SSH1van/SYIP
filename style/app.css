@@ -1016,6 +1016,8 @@ h1 {
 .content-name {
     width: 600px;
     margin-right: 40px;
+
+    word-break: break-all;
 }
 
 .content-author {
@@ -1164,6 +1166,10 @@ h1 {
 
 @media (max-width: 700px) {
 
+    .content-into {
+        zoom: 70%;
+    }
+
     .whom_inner {
         padding: 0 80px;
     }
@@ -1234,6 +1240,9 @@ h1 {
 }
 
 @media (max-width: 500px) {
+    .content-into {
+        zoom: 60%;
+    }
 
     .info_text {
         font-size: 12px;
@@ -1271,6 +1280,10 @@ h1 {
 }
 
 @media (max-width: 350px) {
+    .content-into {
+        zoom: 50%;
+    }
+
     .title {
         font-size: 22px;
         height: 80px;
@@ -1334,6 +1347,10 @@ h1 {
 }
 
 @media (max-width: 250px) {
+    .content-into {
+        zoom: 40%;
+    }
+
     .login {
         zoom: 70%;
         width: 100px;
