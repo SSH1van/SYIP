@@ -381,7 +381,7 @@ a {
 }
 
 .second .whom_text {
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .card-wrap {
@@ -1066,8 +1066,6 @@ h1 {
 }
 
 
-
-
 /* Media
 ======================*/
 @media (max-width: 1400px) {
@@ -1178,6 +1176,20 @@ h1 {
         font-size: 14px;
     }
 
+    /* Card */
+    .card {
+        width: 280px;
+        height: 400px;
+    }
+
+    .card-info .whom_subtitle {
+        font-size: 26px;
+    }
+
+    .card-info .whom_text {
+        font-size: 14px;
+    }
+
     /* Title */
     .title {
         font-size: 36px;
@@ -1216,16 +1228,8 @@ h1 {
     }
 
     /* Timeline */
-    .cd-timeline-content h1 {
-        font-size: 20px;
-    }
-
-    .cd-timeline-content p {
-        font-size: 14px;
-    }
-
     #cd-timeline {
-        margin: 0 30px;
+        zoom: 80%;
     }
 }
 
@@ -1240,15 +1244,10 @@ h1 {
         width: max-content;
     }
 
-    /* Title */
-    .title {
-        font-size: 30px;
-        padding: 0 30px;
-    }
-
     /* Intro */
     .intro_title {
         font-size: 20px;
+        width: min-content;
     }
 
     .intro_block_inner {
@@ -1261,22 +1260,124 @@ h1 {
     }
 
     /* Timeline */
-    .cd-timeline-content p {
-        font-size: 12px;
+    #cd-timeline {
+        zoom: 70%;
     }
 
+    /* Copyright */
+    .copyright_text {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 350px) {
+    .title {
+        font-size: 22px;
+        height: 80px;
+    }
+
+    .login {
+        zoom: 80%;
+    }
+
+    .burger {
+        zoom: 80%;
+    }
 
     /* Intro */
     .intro_title {
         font-size: 15px;
         line-height: 2;
+        padding-left: 20px;
     }
 
+    .intro_block_inner {
+        width: 75%;
+    }
 
     .intro_img {
-        width: 200px;
+        width: 180px;
     }
+
+    /* Card */
+    .whom_inner {
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 200px;
+        height: 300px;
+        margin: 10px 0;
+    }
+
+    .card-wrap {
+        margin: 0 10px;
+    }
+
+    .card-info .whom_subtitle {
+        font-size: 20px;
+    }
+
+    .card-info .whom_text {
+        font-size: 10px;
+    }
+
+    /* Timeline */
+    #cd-timeline {
+        zoom: 60%;
+    }
+
+    /* Copyright */
+    .copyright_text {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 250px) {
+    .login {
+        zoom: 70%;
+        width: 100px;
+    }
+
+    .burger {
+        zoom: 70%;
+        width: 100px;
+    }
+
+    .info_text {
+        font-size: 10px;
+    }
+
+    /* Intro */
+    .intro_title {
+        font-size: 12px;
+    }
+
+    .intro_block_inner {
+        width: 85%;
+    }
+
+    .intro_img {
+        width: 180px;
+    }
+
+    /* Card */
+    .card {
+        width: 150px;
+        height: 250px;
+    }
+
+    .card-info .whom_subtitle {
+        font-size: 14px;
+    }
+
+    .card-info .whom_text {
+        font-size: 8px;
+    }
+
+    /* Timeline */
+    #cd-timeline {
+        zoom: 50%;
+    }
+
 }
