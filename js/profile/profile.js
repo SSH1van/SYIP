@@ -2,13 +2,13 @@
 $('.btn').click(function () {
   $('.menu').toggleClass('close');
   $('.all-contetn-inner').toggleClass('close');
-  localStorage.setItem("menu-close", JSON.stringify(true));
+  localStorage.setItem("menu-close", JSON.stringify(false));
 });
 $('.btn.back').click(function () {
-  localStorage.setItem("menu-close", JSON.stringify(true));
+  localStorage.setItem("menu-close", JSON.stringify(false));
 });
 $('.btn.burger').click(function () {
-  localStorage.setItem("menu-close", JSON.stringify(false));
+  localStorage.setItem("menu-close", JSON.stringify(true));
 });
 
 // Changing the position of the content
@@ -69,8 +69,8 @@ if (JSON.parse(localStorage.getItem("position"))) {
   $(".shell.projects").addClass("open");
 }
 if (JSON.parse(localStorage.getItem("menu-close"))) {
-  $(".menu").addClass("close");
-  $(".all-contetn-inner").addClass("close");
+  $(".menu").removeClass("close");
+  $(".all-contetn-inner").removeClass("close");
 }
 
 $("#nav-projects").click(function () {

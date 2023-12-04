@@ -63,7 +63,7 @@ $_SESSION['num'] = 1;
     </div>
 
     <!-- Menu -->
-    <div class="menu">
+    <div class="menu close">
         <div class="btn-inner">
             <div class="btn burger">
                 <div class="icon"></div>
@@ -121,7 +121,7 @@ $_SESSION['num'] = 1;
 
     <!-- Add Content -->
     <div class="all-content">
-        <div class="all-contetn-inner">
+        <div class="all-contetn-inner close">
             <div class="shell main open" id="main">
                 <div class="elemrnt-main">
                     Добро пожаловать,

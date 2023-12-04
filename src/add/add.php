@@ -34,8 +34,8 @@ if ($_FILES["file"]["error"] == 4) {
         setValidationError('file', 'Файл имеет неверный тип');
     }
 
-    if (($file['size'] / 2000000) >= 1) {
-        setValidationError('file', 'Файл должен быть меньше 2 мб');
+    if ($file['size'] / 2000000 >= 1 || $file['size'] == 0 ) {
+        setValidationError('file', 'Файл должен быть меньше 2 МБ');
     }
 }
 

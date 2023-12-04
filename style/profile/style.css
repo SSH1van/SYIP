@@ -177,7 +177,7 @@ a.href:hover use {
 }
 
 .menu.close .menu-icon.small {
-    right: -70px;
+    right: -71px;
     display: block;
     animation: fadeInFromNone 0.5s ease-in-out;
     animation-fill-mode: forwards;
@@ -218,8 +218,6 @@ span {
     transition-duration: 0.5s;
 }
 
-
-
 .btn .icon {
     position: absolute;
     height: 2px;
@@ -234,6 +232,7 @@ span {
 
 .btn.burger {
     transform: translateX(100px);
+    display: block;
 }
 
 .btn.burger .icon:before {
@@ -326,7 +325,7 @@ span {
     top: 0;
     right: 0;
 
-    width: 80%;
+    width: 82vw;
     height: inherit;
 
     -webkit-transition-duration: 0.5s;
@@ -336,7 +335,7 @@ span {
 }
 
 .all-contetn-inner.close {
-    width: 95%;
+    width: 92vw;
 }
 
 .shell {
@@ -558,7 +557,8 @@ span {
 
 .content-date {
     margin-right: 130px;
-    width: auto;
+    width: 180px;
+    text-align: center;
 }
 
 #showmore-triger {
@@ -660,4 +660,45 @@ span {
 
 .btn-primary.btn-active {
     transform: translateY(-100%);
+}
+
+@media(max-width: 1600px) {
+    .all-contetn-inner {
+        width: 80vw;
+    }
+    
+    .all-contetn-inner.close {
+        width: 90vw;
+    }
+}
+
+@media(max-width: 1450px) {
+    .all-contetn-inner {
+        width: 75vw;
+    }
+    
+    .all-contetn-inner.close {
+        width: 95vw;
+    }
+}
+
+@media(max-width: 1150px) {
+    .menu {
+        width: 250px;
+    }
+    .menu.close {
+        transform: translate(-200px, 0);
+    }
+    .menu-navs, .btn-inner {
+        zoom: 80%;
+    }
+
+    .btn.burger .icon:after {
+        height: 3px;
+    }
+
+    .menu.close .menu-icon.small {
+        right: -92px;
+    }
+
 }
