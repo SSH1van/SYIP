@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../helpers.php';
 
 // Number of output elements
-$limit = 8;
+$limit = 15;
 $user = currentUser();
 $iduser = $user['id'] ?? null;
 
