@@ -1,4 +1,4 @@
 # SYIP
 Save your intellectual property
 
-![syip](https://github.com/SSSHIvah/SYIP/assets/118367239/a56fe921-7dd2-4b63-9873-b2362420771a)
+![syip](https://github.com/SSSHIvah/SYIP/assets/118367239/df392ddc-051d-4360-8502-13d9de960dc7)
